@@ -8,6 +8,8 @@ import Navigation from '@/components/Navigation';
 import SkillBar from '@/components/SkillBar';
 import ProjectCard from '@/components/ProjectCard';
 import Certificate from '@/components/Certificate';
+import { Download } from 'lucide-react';
+
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -80,6 +82,18 @@ const Index = () => {
             <Gamepad2 className="ml-2 w-5 h-5" />
           </button>
         </div>
+
+        <div className="mt-4 animate-float">
+  <a 
+    href="public/rohit_resume.pdf" 
+    download
+    className="pixel-button flex items-center mt-2"
+  >
+    DOWNLOAD RESUME
+    <Download className="ml-2 w-5 h-5" />
+  </a>
+</div>
+
         
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
           <ChevronDown className="w-8 h-8 text-retro-light-gray" />
@@ -115,7 +129,7 @@ const Index = () => {
                     <span className="text-retro-yellow">↳</span> Winner of InnovateYou Techathon 2.0 2025
                   </p>
                   <p className="font-retro text-sm text-retro-light-gray mt-1">
-                    Awarded "Best Solution" for AI-driven Fantasy Sports project
+                    Awarded "Best Solution" for Edtech Domain
                   </p>
                 </div>
               </div>
@@ -199,7 +213,7 @@ const Index = () => {
               title="Fantasy Sports Optimisation"
               description="Created an AI-driven algorithm for fantasy sports team selection using predictive modeling and optimization techniques."
               technologies={["Python", "MLOps", "Docker", "TensorFlow"]}
-              githubUrl="https://github.com/rohitkshirsagar19/fantasy-sports"
+              githubUrl="https://github.com/rohitkshirsagar19/fantasy-sports-machine-learning.git"
               imageIndex={0}
             />
           </div>
@@ -209,8 +223,8 @@ const Index = () => {
               title="Stock Price Forecasting"
               description="Developed a web application for stock price prediction using historical data and machine learning forecasting models."
               technologies={["Python", "Streamlit", "YFinance", "Scikit-learn"]}
-              githubUrl="https://github.com/rohitkshirsagar19/stock-forecast"
-              liveUrl="https://example.com/stock-forecast"
+              githubUrl="https://github.com/rohitkshirsagar19/Stock_Analysis_Model"
+              
               imageIndex={1}
             />
           </div>
@@ -228,51 +242,80 @@ const Index = () => {
       </section>
       
       {/* Skills Section */}
-      <section id="skills" className="py-16 md:py-24 retro-container bg-retro-black bg-opacity-30">
-        <h2 className="section-title">SKILLS</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="pixel-border bg-retro-dark-gray p-6 animate-pixel-fade-in">
-            <h3 className="font-pixel text-xl text-retro-green mb-6">PROGRAMMING</h3>
-            
-            <div>
-              <SkillBar name="Python" level={5} />
-              <SkillBar name="C++" level={3} />
-              <SkillBar name="JavaScript" level={4} />
-              <SkillBar name="SQL" level={4} />
-              <SkillBar name="TypeScript" level={3} />
-            </div>
+      {/* Skills Section */}
+<section id="skills" className="py-16 md:py-24 retro-container bg-retro-black bg-opacity-30">
+  <h2 className="section-title">SKILLS</h2>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+    {/* Programming */}
+    <div className="pixel-border bg-retro-dark-gray p-6 animate-pixel-fade-in">
+      <h3 className="font-pixel text-xl text-retro-green mb-6">PROGRAMMING</h3>
+      <div>
+        <SkillBar name="Python" level={5} />
+        <SkillBar name="C++" level={3} />
+        <SkillBar name="JavaScript" level={2} />
+        <SkillBar name="SQL" level={2.5} />
+        <SkillBar name="TypeScript" level={1} />
+      </div>
+    </div>
+
+    {/* Frameworks */}
+    <div className="pixel-border bg-retro-dark-gray p-6 animate-pixel-fade-in" style={{ animationDelay: '0.2s' }}>
+      <h3 className="font-pixel text-xl text-retro-blue mb-6">FRAMEWORKS</h3>
+      <div>
+        <SkillBar name="Flask" level={4} />
+        <SkillBar name="Streamlit" level={4} />
+        <SkillBar name="Next.js" level={2} />
+        <SkillBar name="TensorFlow" level={1} />
+      </div>
+    </div>
+
+    {/* Add: DevOps & Deployment */}
+    <div className="pixel-border bg-retro-dark-gray p-6 animate-pixel-fade-in" style={{ animationDelay: '0.3s' }}>
+      <h3 className="font-pixel text-xl text-retro-pink mb-6">DEVOPS & DEPLOYMENT</h3>
+      <div>
+        <SkillBar name="Docker" level={3} />
+        <SkillBar name="MLflow" level={2} />
+        <SkillBar name="GitHub Actions" level={1} />
+      </div>
+    </div>
+
+    {/* Tools & Technologies */}
+    <div className="pixel-border bg-retro-dark-gray p-6 md:col-span-2 animate-pixel-fade-in" style={{ animationDelay: '0.4s' }}>
+      <h3 className="font-pixel text-xl text-retro-yellow mb-6">TOOLS & TECHNOLOGIES</h3>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {['Git', 'Linux', 'Bash', 'Jupyter', 'Pandas', 'Scikit-learn', 'NumPy', 'REST API', 'Supabase'].map((tool, index) => (
+          <div key={index} className="bg-retro-dark-purple p-2 rounded text-center font-retro">
+            {tool}
           </div>
-          
-          <div className="pixel-border bg-retro-dark-gray p-6 animate-pixel-fade-in" style={{ animationDelay: '0.2s' }}>
-            <h3 className="font-pixel text-xl text-retro-blue mb-6">FRAMEWORKS</h3>
-            
-            <div>
-              <SkillBar name="Flask" level={4} />
-              <SkillBar name="Streamlit" level={4} />
-              <SkillBar name="Next.js" level={3} />
-              <SkillBar name="TensorFlow" level={3} />
-              <SkillBar name="PyTorch" level={2} />
-            </div>
-          </div>
-          
-          <div className="pixel-border bg-retro-dark-gray p-6 md:col-span-2 animate-pixel-fade-in" style={{ animationDelay: '0.4s' }}>
-            <h3 className="font-pixel text-xl text-retro-yellow mb-6">TOOLS & TECHNOLOGIES</h3>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {['Git', 'Docker', 'MLOps', 'AWS', 'Linux', 'Bash', 'Jupyter', 'Pandas', 
-                'Scikit-learn', 'NumPy', 'REST API', 'Supabase'].map((tool, index) => (
-                <div 
-                  key={index} 
-                  className="bg-retro-dark-purple p-2 rounded text-center font-retro"
-                >
-                  {tool}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+
+    {/* Add: Databases */}
+    <div className="pixel-border bg-retro-dark-gray p-6 animate-pixel-fade-in" style={{ animationDelay: '0.5s' }}>
+      <h3 className="font-pixel text-xl text-retro-orange mb-6">DATABASES</h3>
+      <div>
+        <SkillBar name="MySQL" level={3} />
+        <SkillBar name="PostgreSQL" level={2.5} />
+        <SkillBar name="MongoDB" level={2} />
+      </div>
+    </div>
+
+    {/* Add: Soft Skills or Optional */}
+    <div className="pixel-border bg-retro-dark-gray p-6 animate-pixel-fade-in" style={{ animationDelay: '0.6s' }}>
+      <h3 className="font-pixel text-xl text-retro-white mb-6">SOFT SKILLS</h3>
+      <div>
+        <SkillBar name="Teamwork" level={4} />
+        <SkillBar name="Problem Solving" level={5} />
+        <SkillBar name="Communication" level={4} />
+      </div>
+    </div>
+
+  </div>
+</section>
+
       
       {/* Education Section */}
       <section id="education" className="py-16 md:py-24 retro-container">
