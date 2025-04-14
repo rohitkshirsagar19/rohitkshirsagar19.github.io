@@ -480,7 +480,7 @@ const Index = () => {
               © 2025 ROHIT KSHIRSAGAR • ALL RIGHTS RESERVED
             </p>
             <p className="font-retro text-retro-gray text-xs mt-2">
-              Made with ♥ and lots of <code/>
+              Made with ♥ and lots of code
             </p>
           </div>
         </div>
