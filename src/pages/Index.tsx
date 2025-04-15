@@ -8,7 +8,8 @@ import SkillBar from '@/components/SkillBar';
 import ProjectCard from '@/components/ProjectCard';
 import Certificate from '@/components/Certificate';
 import { Download } from 'lucide-react';
-import { toast } from "@/hooks/use-toast"; // Import the toast function
+import { toast } from "@/hooks/use-toast"; 
+import { Instagram } from 'lucide-react';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -136,7 +137,7 @@ const Index = () => {
         <div className="mt-4 animate-float">
           <a
             href="/rohit_resume.pdf" 
-            download="rohit_kshirsagar_resume.pdf" // Optional: specify download filename
+            download="rohit_kshirsagar_resume.pdf" 
             className="pixel-button flex items-center mt-2"
           >
             DOWNLOAD RESUME
@@ -286,6 +287,28 @@ const Index = () => {
               imageIndex={2}
             />
           </div>
+
+          <div className="animate-pixel-fade-in" style={{ animationDelay: '0.2s' }}>
+            <ProjectCard
+              title="Edulite OS"
+              description="EduLite OS is a lightweight, ubuntu-based Linux operating system tailored for educational use, especially on low-end hardware (≤2GB RAM). It comes pre-installed with essential offline learning tools, teacher dashboards, Kolibri, and Python educational apps — all optimized for speed and simplicity."
+              technologies={["Python", "Linux", "Ubuntu", "Kolibri","Cubic"]}
+              githubUrl="https://github.com/rohitkshirsagar19/EduliteOS"
+              liveUrl="https://edulite-os-showcase.vercel.app/"
+              imageIndex={3}
+            />
+          </div>
+
+          <div className="animate-pixel-fade-in" style={{ animationDelay: '0.2s' }}>
+            <ProjectCard
+              title="Plagiarism Checker - Basic"
+              description="This Plagiarism Checker is a simple yet effective tool to compare text documents and detect similarity using TF-IDF (Term Frequency-Inverse Document Frequency) and cosine similarity."
+              technologies={["Python","NLTK","Scikit-learn","Streamlit","PyPDF2"]}
+              githubUrl="https://github.com/rohitkshirsagar19/plagiarism-checker-basic"
+              liveUrl="https://plagiarism-checker-basic.streamlit.app/"
+              imageIndex={4}
+            />
+          </div>
         </div>
       </section>
 
@@ -418,6 +441,11 @@ const Index = () => {
                 <Github className="w-5 h-5 mr-3 group-hover:text-retro-purple" />
                 <span>github.com/rohitkshirsagar19</span>
               </a>
+
+              <a href="https://www.instagram.com/rohitkshirsagar19" target="_blank" rel="noopener noreferrer" className="flex items-center text-retro-light-gray hover:text-retro-purple transition-colors group">
+                <Instagram className="w-5 h-5 mr-3 group-hover:text-retro-purple" />
+                <span>instagram.com/rohitkshirsagar19</span>
+              </a>
             </div>
           </div>
 
@@ -439,7 +467,7 @@ const Index = () => {
               <div>
                 <input
                   type="email"
-                  name="_replyto" // Formspree uses this for email
+                  name="_replyto" 
                   placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -449,7 +477,7 @@ const Index = () => {
               </div>
               <div>
                 <textarea
-                  name="message" // Required for Formspree
+                  name="message" 
                   placeholder="Message"
                   rows={4}
                   value={message}
@@ -458,7 +486,7 @@ const Index = () => {
                   className="w-full bg-retro-black border-2 border-retro-gray p-3 font-retro text-retro-light-gray focus:border-retro-purple outline-none resize-none"
                 ></textarea>
               </div>
-              {/* Optional: Honeypot field for extra spam protection */}
+              
               <input type="text" name="_gotcha" style={{ display: 'none' }} />
               <button
                 type="submit"
