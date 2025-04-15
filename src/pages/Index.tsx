@@ -135,7 +135,7 @@ const Index = () => {
 
         <div className="mt-4 animate-float">
           <a
-            href="public/rohit_resume.pdf" 
+            href="/rohit_resume.pdf" 
             download="rohit_kshirsagar_resume.pdf" // Optional: specify download filename
             className="pixel-button flex items-center mt-2"
           >
