@@ -14,13 +14,13 @@ import { Instagram } from 'lucide-react';
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [textVisible, setTextVisible] = useState("");
-  const fullText = "AI & Data Science Enthusiast | Developer";
+  const fullText = "AI & Data Science Enthusiast | Python Developer";
 
   // State for form fields
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false); // Optional: for loading state
+  const [isSubmitting, setIsSubmitting] = useState(false); 
 
   // Text typing effect
   useEffect(() => {
@@ -54,7 +54,7 @@ const Index = () => {
     setIsSubmitting(true);
 
     const form = event.target;
-    const statusElement = document.createElement('div'); // Temporary element for status (not rendered in React)
+    const statusElement = document.createElement('div'); 
     const data = new FormData(form);
 
     try {
@@ -123,6 +123,7 @@ const Index = () => {
             </p>
           </div>
         </div>
+        
 
         <div className="mt-12 animate-float">
           <button
@@ -309,6 +310,17 @@ const Index = () => {
               imageIndex={4}
             />
           </div>
+
+          <div className="animate-pixel-fade-in" style={{ animationDelay: '0.2s' }}>
+            <ProjectCard
+              title="Terminal Portfolio"
+              description="Built using HTML, CSS, and JavaScript, this website emulates a Linux terminal, allowing users to explore my projects, skills, and experience using real commands."
+              technologies={["HTML","CSS","JS","Terminal"]}
+              githubUrl="https://github.com/rohitkshirsagar19/terminal-portfolio"
+              liveUrl="https://rohitkshirsagar19.vercel.app/"
+              imageIndex={5}
+            />
+          </div>
         </div>
       </section>
 
@@ -332,6 +344,7 @@ const Index = () => {
             <h3 className="font-pixel text-xl text-retro-blue mb-6">FRAMEWORKS</h3>
             <div>
               <SkillBar name="Flask" level={4} />
+              <SkillBar name="FastAPI" level={2.3} />
               <SkillBar name="Streamlit" level={4} />
               <SkillBar name="Next.js" level={2} />
               <SkillBar name="TensorFlow" level={1} />
@@ -514,14 +527,7 @@ const Index = () => {
         </div>
       </footer>
 
-      {/* Audio control - uncomment if you want to add background music */}
-      {/*
-      <div className="fixed bottom-20 right-4 z-50 bg-retro-dark-gray p-2 rounded-full">
-        <button className="text-retro-light-gray hover:text-retro-purple transition-colors">
-          <Volume2 className="w-6 h-6" />
-        </button>
-      </div>
-      */}
+    
     </div>
   );
 };
