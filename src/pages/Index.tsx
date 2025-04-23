@@ -325,7 +325,7 @@ const Index = () => {
           <div className="animate-pixel-fade-in" style={{ animationDelay: '0.2s' }}>
             <ProjectCard
               title="AI-Powered Text & Image Generator"
-              description="Built a full-stack AI application for text and image generation using a fine-tuned GPT-2 model and Stable Diffusion, featuring user authentication, chat history, and MLflow experiment tracking."
+              description="Built a full-stack AI application for text and image generation using a fine-tuned GPT-2 model and Stable Diffusion, featuring user authentication, chat history, and MLflow experiment tracking.( With low resource usage)"
               technologies={["React", "Flask", "GPT-2", "Stable Diffusion", "MLflow", "PostgreSQL"]}
               githubUrl="https://github.com/aissm-deeplearning/llm"
               
