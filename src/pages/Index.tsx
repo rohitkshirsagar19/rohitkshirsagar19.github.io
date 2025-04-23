@@ -321,6 +321,17 @@ const Index = () => {
               imageIndex={5}
             />
           </div>
+
+          <div className="animate-pixel-fade-in" style={{ animationDelay: '0.2s' }}>
+            <ProjectCard
+              title="AI-Powered Text & Image Generator"
+              description="Built a full-stack AI application for text and image generation using a fine-tuned GPT-2 model and Stable Diffusion, featuring user authentication, chat history, and MLflow experiment tracking."
+              technologies={["React", "Flask", "GPT-2", "Stable Diffusion", "MLflow", "PostgreSQL"]}
+              githubUrl="https://github.com/aissm-deeplearning/llm"
+              
+              imageIndex={6}
+            />
+          </div>
         </div>
       </section>
 
