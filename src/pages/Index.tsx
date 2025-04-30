@@ -22,6 +22,65 @@ const Index = () => {
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false); 
 
+  // **New: State for visible projects**
+  const [visibleProjects, setVisibleProjects] = useState(3);
+
+  // **New: Project data array**
+  const projects = [
+    {
+      title: "Fantasy Sports Optimisation",
+      description: "Created an AI-driven algorithm for fantasy sports team selection using predictive modeling and optimization techniques.",
+      technologies: ["Python", "MLOps", "Docker", "TensorFlow"],
+      githubUrl: "https://github.com/rohitkshirsagar19/fantasy-sports-machine-learning.git",
+      imageIndex: 0
+    },
+    {
+      title: "Stock Price Forecasting",
+      description: "Developed a web application for stock price prediction using historical data and machine learning forecasting models.",
+      technologies: ["Python", "Streamlit", "YFinance", "Scikit-learn"],
+      githubUrl: "https://github.com/rohitkshirsagar19/Stock_Analysis_Model",
+      imageIndex: 1
+    },
+    {
+      title: "Aryabhatta Search",
+      description: "Built a technical search engine focused on engineering and scientific documents with advanced filtering capabilities.",
+      technologies: ["Next.js", "Supabase", "TypeScript", "TailwindCSS"],
+      githubUrl: "https://github.com/rohitkshirsagar19/aryabhatta-search",
+      imageIndex: 2
+    },
+    {
+      title: "Edulite OS",
+      description: "EduLite OS is a lightweight, ubuntu-based Linux operating system tailored for educational use, especially on low-end hardware (≤2GB RAM). It comes pre-installed with essential offline learning tools, teacher dashboards, Kolibri, and Python educational apps — all optimized for speed and simplicity.",
+      technologies: ["Python", "Linux", "Ubuntu", "Kolibri", "Cubic"],
+      githubUrl: "https://github.com/rohitkshirsagar19/EduliteOS",
+      liveUrl: "https://edulite-os-showcase.vercel.app/",
+      imageIndex: 3
+    },
+    {
+      title: "Plagiarism Checker - Basic",
+      description: "This Plagiarism Checker is a simple yet effective tool to compare text documents and detect similarity using TF-IDF (Term Frequency-Inverse Document Frequency) and cosine similarity.",
+      technologies: ["Python", "NLTK", "Scikit-learn", "Streamlit", "PyPDF2"],
+      githubUrl: "https://github.com/rohitkshirsagar19/plagiarism-checker-basic",
+      liveUrl: "https://plagiarism-checker-basic.streamlit.app/",
+      imageIndex: 4
+    },
+    {
+      title: "Terminal Portfolio",
+      description: "Built using HTML, CSS, and JavaScript, this website emulates a Linux terminal, allowing users to explore my projects, skills, and experience using real commands.",
+      technologies: ["HTML", "CSS", "JS", "Terminal"],
+      githubUrl: "https://github.com/rohitkshirsagar19/terminal-portfolio",
+      liveUrl: "https://rohitkshirsagar19.vercel.app/",
+      imageIndex: 5
+    },
+    {
+      title: "AI-Powered Text & Image Generator",
+      description: "Built a full-stack AI application for text and image generation using a fine-tuned GPT-2 model and Stable Diffusion, featuring user authentication, chat history, and MLflow experiment tracking.( With low resource usage)",
+      technologies: ["React", "Flask", "GPT-2", "Stable Diffusion", "MLflow", "PostgreSQL"],
+      githubUrl: "https://github.com/aissm-deeplearning/llm",
+      imageIndex: 6
+    }
+  ];
+
   // Text typing effect
   useEffect(() => {
     if (isLoading) return;
@@ -72,7 +131,7 @@ const Index = () => {
         setName('');
         setEmail('');
         setMessage('');
-        form.reset(); // Reset the form fields
+        form.reset();
       } else {
         const result = await response.json();
         if (result.errors) {
@@ -124,7 +183,6 @@ const Index = () => {
           </div>
         </div>
         
-
         <div className="mt-12 animate-float">
           <button
             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
@@ -254,85 +312,39 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
+      {/* Projects Section - Updated */}
       <section id="projects" className="py-16 md:py-24 retro-container">
         <h2 className="section-title">PROJECTS</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="animate-pixel-fade-in" style={{ animationDelay: '0.1s' }}>
-            <ProjectCard
-              title="Fantasy Sports Optimisation"
-              description="Created an AI-driven algorithm for fantasy sports team selection using predictive modeling and optimization techniques."
-              technologies={["Python", "MLOps", "Docker", "TensorFlow"]}
-              githubUrl="https://github.com/rohitkshirsagar19/fantasy-sports-machine-learning.git"
-              imageIndex={0}
-            />
-          </div>
-
-          <div className="animate-pixel-fade-in" style={{ animationDelay: '0.2s' }}>
-            <ProjectCard
-              title="Stock Price Forecasting"
-              description="Developed a web application for stock price prediction using historical data and machine learning forecasting models."
-              technologies={["Python", "Streamlit", "YFinance", "Scikit-learn"]}
-              githubUrl="https://github.com/rohitkshirsagar19/Stock_Analysis_Model"
-              imageIndex={1}
-            />
-          </div>
-
-          <div className="animate-pixel-fade-in" style={{ animationDelay: '0.3s' }}>
-            <ProjectCard
-              title="Aryabhatta Search"
-              description="Built a technical search engine focused on engineering and scientific documents with advanced filtering capabilities."
-              technologies={["Next.js", "Supabase", "TypeScript", "TailwindCSS"]}
-              githubUrl="https://github.com/rohitkshirsagar19/aryabhatta-search"
-              imageIndex={2}
-            />
-          </div>
-
-          <div className="animate-pixel-fade-in" style={{ animationDelay: '0.2s' }}>
-            <ProjectCard
-              title="Edulite OS"
-              description="EduLite OS is a lightweight, ubuntu-based Linux operating system tailored for educational use, especially on low-end hardware (≤2GB RAM). It comes pre-installed with essential offline learning tools, teacher dashboards, Kolibri, and Python educational apps — all optimized for speed and simplicity."
-              technologies={["Python", "Linux", "Ubuntu", "Kolibri","Cubic"]}
-              githubUrl="https://github.com/rohitkshirsagar19/EduliteOS"
-              liveUrl="https://edulite-os-showcase.vercel.app/"
-              imageIndex={3}
-            />
-          </div>
-
-          <div className="animate-pixel-fade-in" style={{ animationDelay: '0.2s' }}>
-            <ProjectCard
-              title="Plagiarism Checker - Basic"
-              description="This Plagiarism Checker is a simple yet effective tool to compare text documents and detect similarity using TF-IDF (Term Frequency-Inverse Document Frequency) and cosine similarity."
-              technologies={["Python","NLTK","Scikit-learn","Streamlit","PyPDF2"]}
-              githubUrl="https://github.com/rohitkshirsagar19/plagiarism-checker-basic"
-              liveUrl="https://plagiarism-checker-basic.streamlit.app/"
-              imageIndex={4}
-            />
-          </div>
-
-          <div className="animate-pixel-fade-in" style={{ animationDelay: '0.2s' }}>
-            <ProjectCard
-              title="Terminal Portfolio"
-              description="Built using HTML, CSS, and JavaScript, this website emulates a Linux terminal, allowing users to explore my projects, skills, and experience using real commands."
-              technologies={["HTML","CSS","JS","Terminal"]}
-              githubUrl="https://github.com/rohitkshirsagar19/terminal-portfolio"
-              liveUrl="https://rohitkshirsagar19.vercel.app/"
-              imageIndex={5}
-            />
-          </div>
-
-          <div className="animate-pixel-fade-in" style={{ animationDelay: '0.2s' }}>
-            <ProjectCard
-              title="AI-Powered Text & Image Generator"
-              description="Built a full-stack AI application for text and image generation using a fine-tuned GPT-2 model and Stable Diffusion, featuring user authentication, chat history, and MLflow experiment tracking.( With low resource usage)"
-              technologies={["React", "Flask", "GPT-2", "Stable Diffusion", "MLflow", "PostgreSQL"]}
-              githubUrl="https://github.com/aissm-deeplearning/llm"
-              
-              imageIndex={6}
-            />
-          </div>
+          {projects.slice(0, visibleProjects).map((project, index) => (
+            <div
+              key={index}
+              className="animate-pixel-fade-in"
+              style={{ animationDelay: `${(index + 1) * 0.1}s` }}
+            >
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                technologies={project.technologies}
+                githubUrl={project.githubUrl}
+                liveUrl={project.liveUrl}
+                imageIndex={project.imageIndex}
+              />
+            </div>
+          ))}
         </div>
+
+        {visibleProjects < projects.length && (
+          <div className="text-center mt-8">
+            <button
+              onClick={() => setVisibleProjects(projects.length)}
+              className="pixel-button"
+            >
+              View More
+            </button>
+          </div>
+        )}
       </section>
 
       {/* Skills Section */}
@@ -480,7 +492,7 @@ const Index = () => {
               <div>
                 <input
                   type="text"
-                  name="name" // Required for Formspree
+                  name="name"
                   placeholder="Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -491,7 +503,7 @@ const Index = () => {
               <div>
                 <input
                   type="email"
-                  name="_replyto" 
+                  name="_replyto"
                   placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -501,7 +513,7 @@ const Index = () => {
               </div>
               <div>
                 <textarea
-                  name="message" 
+                  name="message"
                   placeholder="Message"
                   rows={4}
                   value={message}
@@ -537,8 +549,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-
-    
     </div>
   );
 };
