@@ -35,11 +35,11 @@ const Index = () => {
       imageIndex: 0
     },
     {
-      title: "Stock Price Forecasting",
-      description: "Developed a web application for stock price prediction using historical data and machine learning forecasting models.",
-      technologies: ["Python", "Streamlit", "YFinance", "Scikit-learn"],
-      githubUrl: "https://github.com/rohitkshirsagar19/Stock_Analysis_Model",
-      imageIndex: 1
+  title: "AI-Powered Multi-Disease Predictor",
+  description: "Developed a full-stack ML application for predicting multiple diseases using multiple trained models. Integrated FastAPI for backend APIs, a modern React (Vite) frontend with dynamic forms, and an MLflow pipeline for experiment tracking. Enabled user data submission and on-demand model retraining. Deployed the entire system on AWS using Docker containers—fully optimized for low-resource environments.",
+  technologies: ["React", "FastAPI", "MLflow", "Scikit-Learn", "Docker", "AWS","PyYAML","GitHub Actions"],
+  githubUrl: "https://github.com/rohitkshirsagar19/multi-disease-predictor",
+  imageIndex: 1
     },
     {
       title: "Aryabhatta Search",
@@ -78,6 +78,13 @@ const Index = () => {
       technologies: ["React", "Flask", "GPT-2", "Stable Diffusion", "MLflow", "PostgreSQL"],
       githubUrl: "https://github.com/aissm-deeplearning/llm",
       imageIndex: 6
+    },
+    {
+      title: "Stock Price Forecasting",
+      description: "Developed a web application for stock price prediction using historical data and machine learning forecasting models.",
+      technologies: ["Python", "Streamlit", "YFinance", "Scikit-learn"],
+      githubUrl: "https://github.com/rohitkshirsagar19/Stock_Analysis_Model",
+      imageIndex: 7
     }
   ];
 
@@ -380,6 +387,7 @@ const Index = () => {
               <SkillBar name="Docker" level={3} />
               <SkillBar name="MLflow" level={2} />
               <SkillBar name="GitHub Actions" level={1} />
+               <SkillBar name="AWS" level={2.5} />
             </div>
           </div>
           {/* Tools & Technologies */}
