@@ -367,6 +367,7 @@ const Index = () => {
               <SkillBar name="JavaScript" level={2} />
               <SkillBar name="SQL" level={2.5} />
               <SkillBar name="TypeScript" level={1} />
+              <SkillBar name="GO" level={1} />
             </div>
           </div>
           {/* Frameworks */}
@@ -416,7 +417,7 @@ const Index = () => {
             <div>
               <SkillBar name="Teamwork" level={4} />
               <SkillBar name="Problem Solving" level={5} />
-              <SkillBar name="Communication" level={4} />
+              <SkillBar name="Communication" level={5} />
             </div>
           </div>
         </div>
@@ -552,7 +553,7 @@ const Index = () => {
               © 2025 ROHIT KSHIRSAGAR • ALL RIGHTS RESERVED
             </p>
             <p className="font-retro text-retro-gray text-xs mt-2">
-              Made with ♥ and lots of code
+              
             </p>
           </div>
         </div>
