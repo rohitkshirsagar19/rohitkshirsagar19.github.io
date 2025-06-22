@@ -77,10 +77,10 @@ const Index = () => {
   imageIndex: 1
     },
     {
-      title: "Aryabhatta Search",
-      description: "Built a technical search engine focused on engineering and scientific documents with advanced filtering capabilities.",
-      technologies: ["Next.js", "Supabase", "TypeScript", "TailwindCSS"],
-      githubUrl: "https://github.com/rohitkshirsagar19/aryabhatta-search",
+      title: "AI Trends Research with CrewAI",
+      description: "Built an automated research system that summarizes the latest AI trends for 2025 using CrewAI's multi-agent collaboration and LLM tools.",
+      technologies: ["Python", "CrewAI", "Groq", "Multi-Agent Systems"],
+      githubUrl: "https://github.com/rohitkshirsagar19/CrewAI-Content-Research.git",
       imageIndex: 2
     },
     {
@@ -120,6 +120,13 @@ const Index = () => {
       technologies: ["Python", "Streamlit", "YFinance", "Scikit-learn"],
       githubUrl: "https://github.com/rohitkshirsagar19/Stock_Analysis_Model",
       imageIndex: 7
+    },
+    {
+      title: "Aryabhatta Search",
+      description: "Built a technical search engine focused on engineering and scientific documents with advanced filtering capabilities.",
+      technologies: ["Next.js", "Supabase", "TypeScript", "TailwindCSS"],
+      githubUrl: "https://github.com/rohitkshirsagar19/aryabhatta-search",
+      imageIndex: 8
     }
   ];
 
@@ -457,6 +464,7 @@ const Index = () => {
               <SkillBar name="Streamlit" level={4} />
               <SkillBar name="Next.js" level={2} />
               <SkillBar name="TensorFlow" level={1} />
+              <SkillBar name="CrewAI" level={1} />
             </div>
           </div>
           {/* DevOps & Deployment */}
@@ -473,7 +481,7 @@ const Index = () => {
           <div className="pixel-border bg-retro-dark-gray p-6 md:col-span-2 animate-pixel-fade-in" style={{ animationDelay: '0.4s' }}>
             <h3 className="font-pixel text-xl text-retro-yellow mb-6">TOOLS & TECHNOLOGIES</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {['Git', 'Linux', 'Bash', 'Jupyter', 'Pandas', 'Scikit-learn', 'NumPy', 'REST API', 'Supabase'].map((tool, index) => (
+              {['Git', 'Linux', 'Bash', 'Jupyter', 'Pandas', 'Scikit-learn', 'NumPy', 'REST API', 'Supabase','LLM APIs'].map((tool, index) => (
                 <div key={index} className="bg-retro-dark-purple p-2 rounded text-center font-retro">
                   {tool}
                 </div>
@@ -496,6 +504,7 @@ const Index = () => {
               <SkillBar name="Teamwork" level={4} />
               <SkillBar name="Problem Solving" level={5} />
               <SkillBar name="Communication" level={5} />
+              <SkillBar name="Research" level={4.6} />
             </div>
           </div>
         </div>
