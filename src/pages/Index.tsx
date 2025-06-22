@@ -344,7 +344,7 @@ const Index = () => {
           <div className="flex items-start md:items-center flex-col md:flex-row mb-4">
             <h3 className="font-pixel text-xl text-retro-blue">Python Developer</h3>
             <span className="md:mx-4 text-retro-light-gray">•</span>
-            <span className="font-retro text-retro-light-gray">MEGAMINDS IT Services <a href="https://megamindsit.in/"></a></span>
+            <span className="font-retro text-retro-light-gray"><a href="https://megamindsit.in/">MEGAMINDS IT Services</a></span>
           </div>
 
           <div className="flex items-center mb-4">
@@ -372,7 +372,7 @@ const Index = () => {
           <div className="flex items-start md:items-center flex-col md:flex-row mb-4">
             <h3 className="font-pixel text-xl text-retro-blue">Co-Founder & Lead Operations </h3>
             <span className="md:mx-4 text-retro-light-gray">•</span>
-            <span className="font-retro text-retro-light-gray">ApexAI Solutions <a href="https://www.apexai.company/"></a></span>
+            <span className="font-retro text-retro-light-gray"><a href="https://www.apexai.company/">ApexAI Solutions </a></span>
           </div>
 
           <div className="flex items-center mb-4">
