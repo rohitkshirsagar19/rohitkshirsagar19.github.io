@@ -201,7 +201,7 @@ const Index = () => {
         if (result.errors) {
           throw new Error(result.errors.map(error => error.message).join(", "));
         } else {
-          throw new Error("Oops! There was a problem submitting your form");
+          throw new Error("Oops! There was a problem submitting your form ;) Please try contacting directly through the mail : rohitkshirsagar1904@gmail.com");
         }
       }
     } catch (error) {
@@ -259,7 +259,7 @@ const Index = () => {
 
         <div className="mt-4 animate-float">
           <a
-            href="/rohit_resume.pdf" 
+            href="https://drive.google.com/drive/folders/1yVDAQEyGxztIlMf7V_cL_m8goIps4CvA?usp=drive_link" 
             download="rohit_kshirsagar_resume.pdf" 
             className="pixel-button flex items-center mt-2"
           >
@@ -345,6 +345,7 @@ const Index = () => {
 
       {/* Experience Section */}
       <section className="py-16 md:py-24 retro-container bg-retro-black bg-opacity-30">
+
         <h2 className="section-title">EXPERIENCE</h2>
 
         <div className="pixel-border bg-retro-dark-gray p-6 animate-pixel-fade-in">
@@ -375,33 +376,6 @@ const Index = () => {
           </ul>
         </div>
 
-        <div className="pixel-border bg-retro-dark-gray p-6 animate-pixel-fade-in" style={{ animationDelay: '0.2s' }}>
-          <div className="flex items-start md:items-center flex-col md:flex-row mb-4">
-            <h3 className="font-pixel text-xl text-retro-blue">Co-Founder & Lead Operations </h3>
-            <span className="md:mx-4 text-retro-light-gray">•</span>
-            <span className="font-retro text-retro-light-gray"><a href="https://www.apexai.company/">ApexAI Solutions </a></span>
-          </div>
-
-          <div className="flex items-center mb-4">
-            <Clock className="w-4 h-4 text-retro-light-gray mr-2" />
-            <span className="font-retro text-sm text-retro-light-gray">June 2025 - Present</span>
-          </div>
-
-          <ul className="space-y-2 font-retro">
-            <li className="flex items-start">
-              <span className="text-retro-blue mr-2">↳</span>
-              <span>Spearheaded operations for ApexAI, optimizing workflows for a fast-paced startup</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-retro-blue mr-2">↳</span>
-              <span>Developed scalable AI solutions, enhancing product functionality</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-retro-blue mr-2">↳</span>
-              <span>Partnered with co-founder to drive innovation and achieve project milestones</span>
-            </li>
-          </ul>
-        </div>
       </section>
 
       {/* Projects Section */}
