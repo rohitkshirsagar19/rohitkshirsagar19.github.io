@@ -609,14 +609,7 @@ const Index = () => {
       {/* Footer - Updated with Funny Quote */}
       <footer className="py-8 bg-retro-black">
         <div className="retro-container text-center">
-            {currentQuote && (
-                <p 
-                  key={currentQuote} 
-                  className="font-retro text-retro-gray text-sm mb-4 italic animate-pixel-fade-in"
-                >
-                  "{currentQuote}"
-                </p>
-            )}
+            <p className="font-retro text-retro-gray text-sm mb-4 italic animate-pixel-fade-in">Aamhi Saare Khavayye</p>
             <p className="font-pixel text-retro-light-gray text-sm">
               © 2025 ROHIT KSHIRSAGAR • ALL RIGHTS RESERVED
             </p>
