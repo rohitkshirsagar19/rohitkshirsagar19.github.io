@@ -11,39 +11,6 @@ import { Download } from 'lucide-react';
 import { toast } from "@/hooks/use-toast";
 import { Instagram } from 'lucide-react';
 
-// A fun list of quotes to display in the footer
-const funnyQuotes = [
-  "With great power comes a great electricity bill.",
-  "There are 10 types of people in the world: those who understand binary, and those who don't.",
-  "I had a problem, so I used RegEx. Now I have two problems.",
-  "Debugging is like being the detective in a crime movie where you are also the murderer.",
-  "Why do programmers prefer dark mode? Because light attracts bugs.",
-  "A programmer's life: 99 little bugs in the code, 99 little bugs. Take one down, patch it around, 127 little bugs in the code.",
-  "// This is a temporary fix. (Narrator: It was not temporary.)",
-  "The best thing about a boolean is even if you are wrong, you are only off by a bit.",
-  "Code runs perfectly in my head, but reality has other plans.",
-  "I don’t have a life; I have a while(true) loop.",
-  "My code doesn’t work, and I have no idea why. My code works, and I have no idea why.",
-  "Git commit: 'Fixed stuff.' Git blame: points at me.",
-  "Why did the programmer quit? Because they didn’t get arrays.",
-  "I told my boss the project was 90% done. Forgot to mention it’s been 90% for three months.",
-  "Coffee: Because NullPointerException isn’t a personality trait.",
-  "The Wi-Fi is down? Time to debug my life choices.",
-  "Programmers don’t die; they just get garbage collected.",
-  "My favorite data structure is the nap stack.",
-  "In India, my code runs faster than the local auto-rickshaw during rush hour.",
-  "Wrote a script to automate my chai breaks, but it got stuck in an infinite loop of 'one more sip'.",
-  "My code’s like a Bollywood movie: lots of drama, a few crashes, and a happy commit at the end.",
-  "In India, we don’t debug; we just offer the bug some spicy biryani and hope it leaves.",
-  "My laptop’s fan spins faster than a ceiling fan in a Delhi summer, but my code still overheats.",
-  "In India, my code compiles faster than the queue at the Aadhaar center, but it still crashes.",
-  "Wrote a script to fix Mumbai’s traffic in my IDE. Spoiler: It threw a StackOverflowError.",
-  "My code’s uptime is better than my ISP during monsoon season. Barely.",
-  "Tried to optimize my life like my Python scripts. Now I’m stuck waiting for a ‘pan card update’ in an infinite loop.",
-  "My app runs smoother than a Delhi metro at 3 a.m., but good luck getting it past the client’s ‘suggestions’."
-];
-
-
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [textVisible, setTextVisible] = useState("");
@@ -58,30 +25,34 @@ const Index = () => {
   // State for visible projects
   const [visibleProjects, setVisibleProjects] = useState(3);
 
-  // **New: State for the funny quote**
-  const [currentQuote, setCurrentQuote] = useState("");
-
   const projects = [
     {
-      title: "Fantasy Sports Optimisation",
-      description: "Created an AI-driven algorithm for fantasy sports team selection using predictive modeling and optimization techniques.",
-      technologies: ["Python", "MLOps", "Docker", "TensorFlow"],
-      githubUrl: "https://github.com/rohitkshirsagar19/fantasy-sports-machine-learning.git",
-      imageIndex: 0
+      "title": "DevBoss: Autonomous AI IT Manager",
+      "description": "Engineered a multi-agent AI system to act as an intelligent IT manager, automating the software development lifecycle from planning and Jira ticket creation to progress tracking. Features a Reinforcement Learning module for self-optimization and a React dashboard for real-time monitoring.",
+      "technologies": ["Python", "CrewAI", "Reinforcement Learning", "FastAPI", "React", "TypeScript", "Jira API", "PyTorch", "Multi-Agent Systems"],
+      "githubUrl": "https://github.com/rohitkshirsagar19/DevBoss",
+      "imageIndex": 0
+    },
+    {
+      title: "Aryabhatta Search",
+      description: "Built a technical search engine focused on engineering and scientific documents with advanced filtering capabilities.",
+      technologies: ["Next.js", "Supabase", "TypeScript", "TailwindCSS"],
+      githubUrl: "https://github.com/rohitkshirsagar19/aryabhatta-search",
+      imageIndex: 1
     },
     {
   title: "AI-Powered Multi-Disease Predictor",
   description: "Developed a full-stack ML application for predicting multiple diseases using multiple trained models. Integrated FastAPI for backend APIs, a modern React (Vite) frontend with dynamic forms, and an MLflow pipeline for experiment tracking. Enabled user data submission and on-demand model retraining. Deployed the entire system on AWS using Docker containers—fully optimized for low-resource environments.",
   technologies: ["React", "FastAPI", "MLflow", "Scikit-Learn", "Docker", "AWS","PyYAML","GitHub Actions"],
   githubUrl: "https://github.com/rohitkshirsagar19/multi-disease-predictor",
-  imageIndex: 1
+  imageIndex: 2
     },
     {
       title: "AI Trends Research with CrewAI",
       description: "Built an automated research system that summarizes the latest AI trends for 2025 using CrewAI's multi-agent collaboration and LLM tools.",
       technologies: ["Python", "CrewAI", "Groq", "Multi-Agent Systems"],
       githubUrl: "https://github.com/rohitkshirsagar19/CrewAI-Content-Research.git",
-      imageIndex: 2
+      imageIndex: 3
     },
     {
       title: "Edulite OS",
@@ -89,7 +60,7 @@ const Index = () => {
       technologies: ["Python", "Linux", "Ubuntu", "Kolibri", "Cubic"],
       githubUrl: "https://github.com/rohitkshirsagar19/EduliteOS",
       liveUrl: "https://edulite-os-showcase.vercel.app/",
-      imageIndex: 3
+      imageIndex: 4
     },
     {
       title: "Plagiarism Checker - Basic",
@@ -97,7 +68,7 @@ const Index = () => {
       technologies: ["Python", "NLTK", "Scikit-learn", "Streamlit", "PyPDF2"],
       githubUrl: "https://github.com/rohitkshirsagar19/plagiarism-checker-basic",
       liveUrl: "https://plagiarism-checker-basic.streamlit.app/",
-      imageIndex: 4
+      imageIndex: 5
     },
     {
       title: "Terminal Portfolio",
@@ -105,29 +76,29 @@ const Index = () => {
       technologies: ["HTML", "CSS", "JS", "Terminal"],
       githubUrl: "https://github.com/rohitkshirsagar19/terminal-portfolio",
       liveUrl: "https://rohitkshirsagar19.vercel.app/",
-      imageIndex: 5
+      imageIndex: 6
     },
     {
       title: "AI-Powered Text & Image Generator",
       description: "Built a full-stack AI application for text and image generation using a fine-tuned GPT-2 model and Stable Diffusion, featuring user authentication, chat history, and MLflow experiment tracking.( With low resource usage)",
       technologies: ["React", "Flask", "GPT-2", "Stable Diffusion", "MLflow", "PostgreSQL"],
       githubUrl: "https://github.com/aissm-deeplearning/llm",
-      imageIndex: 6
+      imageIndex: 7
     },
     {
       title: "Stock Price Forecasting",
       description: "Developed a web application for stock price prediction using historical data and machine learning forecasting models.",
       technologies: ["Python", "Streamlit", "YFinance", "Scikit-learn"],
       githubUrl: "https://github.com/rohitkshirsagar19/Stock_Analysis_Model",
-      imageIndex: 7
+      imageIndex: 8
     },
     {
-      title: "Aryabhatta Search",
-      description: "Built a technical search engine focused on engineering and scientific documents with advanced filtering capabilities.",
-      technologies: ["Next.js", "Supabase", "TypeScript", "TailwindCSS"],
-      githubUrl: "https://github.com/rohitkshirsagar19/aryabhatta-search",
-      imageIndex: 8
-    }
+      title: "Fantasy Sports Optimisation",
+      description: "Created an AI-driven algorithm for fantasy sports team selection using predictive modeling and optimization techniques.",
+      technologies: ["Python", "MLOps", "Docker", "TensorFlow"],
+      githubUrl: "https://github.com/rohitkshirsagar19/fantasy-sports-machine-learning.git",
+      imageIndex: 9
+    },
   ];
 
   // Text typing effect
@@ -156,22 +127,7 @@ const Index = () => {
     return () => clearTimeout(timer);
   }, []);
   
-  // Funny quote effect
-  useEffect(() => {
-    // Set an initial quote immediately
-    const initialQuote = funnyQuotes[Math.floor(Math.random() * funnyQuotes.length)];
-    setCurrentQuote(initialQuote);
-
-    // Set an interval to change the quote every 10 seconds
-    const quoteInterval = setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * funnyQuotes.length);
-      setCurrentQuote(funnyQuotes[randomIndex]);
-    }, 10000); // Change quote every 10 seconds
-
-    // Cleanup function to clear the interval when the component unmounts
-    return () => clearInterval(quoteInterval);
-  }, []); // Empty dependency array ensures this runs only once on mount
-
+  
   // Form submission handler
   const handleSendMessage = async (event) => {
     event.preventDefault();
@@ -434,7 +390,8 @@ const Index = () => {
             <h3 className="font-pixel text-xl text-retro-blue mb-6">FRAMEWORKS</h3>
             <div>
               <SkillBar name="Flask" level={4} />
-              <SkillBar name="FastAPI" level={2.3} />
+              <SkillBar name="FastAPI" level={3.3} />
+              <SkillBar name="Django" level={2.3} />
               <SkillBar name="Streamlit" level={4} />
               <SkillBar name="Next.js" level={2} />
               <SkillBar name="TensorFlow" level={1} />
@@ -447,7 +404,7 @@ const Index = () => {
             <div>
               <SkillBar name="Docker" level={3} />
               <SkillBar name="MLflow" level={2} />
-              <SkillBar name="GitHub Actions" level={1} />
+              <SkillBar name="GitHub Actions" level={3} />
                <SkillBar name="AWS" level={2.5} />
             </div>
           </div>
