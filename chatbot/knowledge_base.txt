@@ -1,0 +1,88 @@
+# About Rohit Kshirsagar
+
+Rohit Kshirsagar is an AI and Data Science student with a passion for building intelligent applications. He is pursuing a B.Tech in Computer Science with a specialization in AI and Data Science from AISSMS Institute of Information Technology, Pune, and is expected to graduate in May 2026.
+
+His primary focus is on Machine Learning, Data Science, Full-Stack Development, and MLOps. He is currently advancing his skills in advanced ML techniques and Docker optimization.
+
+---
+# Professional Experience
+
+Rohit worked as a Python Developer at MEGAMINDS IT Services from July 2024 to September 2024. In this role, he designed and implemented Python solutions to optimize workflows, developed data pipelines to enhance data-driven decision-making, and collaborated with cross-functional teams to integrate AI-powered features.
+
+---
+# Achievements and Certifications
+
+## Achievements
+- Winner of InnovateYou Techathon 2.0 2025. Awarded "Best Solution" for an AI-driven optimization project in the Edtech Domain.
+
+## Certifications
+- The Complete Python Pro Bootcamp from Udemy (2023)
+- Machine Learning A-Z from Udemy (2024)
+- Database Programming with SQL from Oracle Academy (2023)
+- Full Stack Development from Free Code Camp (2024)
+
+---
+# Technical Skills
+
+## Programming Languages
+- Python (Expert)
+- C++ (Intermediate)
+- JavaScript (Beginner)
+- SQL (Intermediate)
+- TypeScript (Beginner)
+- Go (Beginner)
+
+## Frameworks & Libraries
+- Flask (Advanced)
+- FastAPI (Intermediate)
+- Django (Beginner)
+- Streamlit (Advanced)
+- Next.js (Beginner)
+- TensorFlow (Beginner)
+- CrewAI (Beginner)
+- NumPy, Pandas, Scikit-learn, XGBoost, PuLP, Matplotlib, Plotly, Seaborn, YFinance
+
+## DevOps & Deployment
+- Docker (Intermediate)
+- MLflow (Beginner)
+- GitHub Actions (Intermediate)
+- AWS (Intermediate)
+
+## Tools & Platforms
+- Git, Linux, Bash, Jupyter, REST API, Supabase, LLM APIs (Groq), Google Custom Search API
+
+## Databases
+- MySQL (Intermediate)
+- PostgreSQL (Intermediate)
+- MongoDB (Beginner)
+
+---
+# Projects
+--- PROJECT ---
+- **DevBoss: Autonomous AI IT Manager**: An AI multi-agent system to automate the software development lifecycle, featuring a Reinforcement Learning module for self-optimization. Built with Python, CrewAI, FastAPI, and React.
+--- PROJECT ---
+- **AI-Powered Multi-Disease Predictor**: A full-stack ML app to predict multiple diseases using FastAPI, React, MLflow, Scikit-Learn, and Docker, deployed on AWS.
+--- PROJECT ---
+- **AI Trends Research with CrewAI**: An automated research system using CrewAI and Groq for summarizing AI trends.
+--- PROJECT ---
+- **Edulite OS**: A lightweight, Ubuntu-based Linux OS for educational use on low-end hardware.
+--- PROJECT ---
+- **Plagiarism Checker - Basic**: A tool to detect text similarity using TF-IDF and cosine similarity, built with Python and Streamlit.
+--- PROJECT ---
+- **Terminal Portfolio**: A portfolio website emulating a Linux terminal, built with HTML, CSS, and JavaScript.
+--- PROJECT ---
+- **AI-Powered Text & Image Generator**: A full-stack app for text and image generation using GPT-2 and Stable Diffusion.
+--- PROJECT ---
+- **Stock Price Forecasting**: A web app for stock price prediction using machine learning.
+--- PROJECT ---
+- **Aryabhatta Search**: A technical search engine for scientific documents using Next.js and Supabase.
+--- PROJECT ---
+- **Fantasy Sports Optimisation**: An AI-driven algorithm for fantasy sports team selection using predictive modeling and optimization.
+
+---
+# Contact Information
+- Email: rohitkshirsagar1904@gmail.com
+- Phone: +91 9834978407
+- LinkedIn: linkedin.com/in/rohitkshirsagar19
+- GitHub: github.com/rohitkshirsagar19
+- Instagram: instagram.com/rohitkshirsagar19

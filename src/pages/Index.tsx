@@ -10,6 +10,8 @@ import Certificate from '@/components/Certificate';
 import { Download } from 'lucide-react';
 import { toast } from "@/hooks/use-toast";
 import { Instagram } from 'lucide-react';
+import { FaRobot } from 'react-icons/fa';
+import Chatbot from '@/components/Chatbot';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -21,6 +23,7 @@ const Index = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
 
   // State for visible projects
   const [visibleProjects, setVisibleProjects] = useState(3);
@@ -563,10 +566,23 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer - Updated with Funny Quote */}
+      {/* --- NEW: Floating Chatbot Logic --- */}
+      {!isChatbotOpen && (
+        <button
+          onClick={() => setIsChatbotOpen(true)}
+          className="fixed bottom-6 right-6 z-50 p-4 bg-retro-purple text-white rounded-full shadow-lg hover:bg-retro-dark-purple transition-all duration-300 "
+          aria-label="Open AI Assistant"
+        >
+          <FaRobot size={28} />
+        </button>
+      )}
+
+      {isChatbotOpen && <Chatbot onClose={() => setIsChatbotOpen(false)} />}
+      {/* --- END: Floating Chatbot Logic --- */}
+      
       <footer className="py-8 bg-retro-black">
         <div className="retro-container text-center">
-            <p className="font-retro text-retro-gray text-sm mb-4 italic animate-pixel-fade-in">Aamhi Saare Khavayye</p>
+            <p className="font-retro text-retro-gray text-sm mb-4 italic animate-pixel-fade-in">Aamhi Saare Khavayye 😋</p>
             <p className="font-pixel text-retro-light-gray text-sm">
               © 2025 ROHIT KSHIRSAGAR • ALL RIGHTS RESERVED
             </p>
