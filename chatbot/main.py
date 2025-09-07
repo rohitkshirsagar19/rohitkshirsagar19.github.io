@@ -12,8 +12,6 @@ from rag_pipeline import setup_rag_pipeline, query_rag
 app = FastAPI()
 
 origins = [
-    "http://localhost:8080",
-    "http://localhost:5173",
     "https://rohitkshirsagar19.github.io",
 ]
 

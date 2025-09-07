@@ -29,6 +29,10 @@ jobs:
         with:
           node-version: '20' # Using a stable LTS version of Node
 
+      # NEW STEP: Create .env file from the GitHub Secret
+      - name: Create .env file
+        run: echo "VITE_API_URL=${{ secrets.VITE_API_URL }}" > .env.local
+
       # Step 3: Installs dependencies using npm ci for faster, more reliable installs
       - name: Install dependencies
         run: npm ci
