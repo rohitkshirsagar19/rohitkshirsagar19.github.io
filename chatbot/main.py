@@ -11,7 +11,7 @@ from rag_pipeline import setup_rag_pipeline, query_rag
 
 app = FastAPI()
 
-origin = ["*"]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
