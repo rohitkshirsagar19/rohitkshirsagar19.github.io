@@ -3,7 +3,6 @@ uvicorn[standard]
 python-dotenv
 pydantic-settings
 langchain
-sentence-transformers
 faiss-cpu
 fastapi 
 uvicorn 
