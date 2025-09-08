@@ -1,30 +1,34 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { X } from 'lucide-react'; // Import close icon
+import { X } from 'lucide-react';
+import ReactMarkdown from 'react-markdown'; // <-- NEW: Import ReactMarkdown
+import remarkGfm from 'remark-gfm'; // <-- NEW: Import the GFM plugin
 
-// Define the structure for a message object
 interface Message {
   sender: 'user' | 'bot';
   text: string;
 }
 
-// Props for the Chatbot component
 interface ChatbotProps {
-  onClose: () => void; // Function to call when the chatbot should close
+  onClose: () => void;
 }
 
-// Get the backend API URL from the environment variable
 const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
 
 const Chatbot: React.FC<ChatbotProps> = ({ onClose }) => {
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      sender: 'bot',
-      text: "INITIALIZING... ROHIT-BOT v1.0 ONLINE. Ask me about Rohit's portfolio!",
-    },
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  
+  // Send initial message only once after component mounts
+  useEffect(() => {
+    setMessages([
+      {
+        sender: 'bot',
+        text: "INITIALIZING... ROHIT-BOT v1.0 ONLINE. Ask me about Rohit's portfolio!",
+      },
+    ]);
+  }, []);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -42,15 +46,11 @@ const Chatbot: React.FC<ChatbotProps> = ({ onClose }) => {
     try {
       const response = await fetch(`${API_URL}/api/chat`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: input }),
       });
 
-      if (!response.ok) {
-        throw new Error('Network response was not ok.');
-      }
+      if (!response.ok) throw new Error('Network response was not ok.');
 
       const data = await response.json();
       const botMessage: Message = { sender: 'bot', text: data.response };
@@ -69,7 +69,6 @@ const Chatbot: React.FC<ChatbotProps> = ({ onClose }) => {
   };
 
   return (
-    // Updated styling for fixed position, z-index, and close button
     <div className="fixed bottom-4 right-4 z-50 w-full max-w-sm h-[450px] pixel-border bg-retro-dark-gray p-4 flex flex-col animate-scale-in">
       <div className="flex justify-between items-center mb-2">
         <h3 className="font-pixel text-lg text-retro-blue">ROHIT-BOT</h3>
@@ -80,15 +79,22 @@ const Chatbot: React.FC<ChatbotProps> = ({ onClose }) => {
       <div className="flex-1 overflow-y-auto mb-4 font-retro pr-2">
         {messages.map((msg, index) => (
           <div key={index} className={`mb-3 ${msg.sender === 'user' ? 'text-right' : 'text-left'}`}>
-            <span
-              className={`inline-block p-2 rounded-md ${
+            <div
+              className={`inline-block p-2 rounded-md text-left ${
                 msg.sender === 'user'
                   ? 'bg-retro-blue text-white'
                   : 'bg-retro-gray text-retro-white'
               }`}
             >
-              {msg.sender === 'user' ? `> ${msg.text}` : msg.text}
-            </span>
+              <div className="prose prose-sm prose-invert prose-p:my-1 prose-ul:my-1 prose-strong:text-retro-white">
+              <ReactMarkdown
+                
+                remarkPlugins={[remarkGfm]}
+              >
+                {msg.sender === 'user' ? `> ${msg.text}` : msg.text}
+              </ReactMarkdown>
+              </div>
+            </div>
           </div>
         ))}
         {isLoading && (

@@ -11,8 +11,12 @@ from rag_pipeline import setup_rag_pipeline, query_rag
 
 app = FastAPI()
 
+# After
 origins = [
-    "https://rohitkshirsagar19.github.io",
+    "http://localhost:8080",              # Your vite dev server
+    "http://127.0.0.1:8080",            # Also your vite dev server (to be safe)
+    "http://localhost:5173",              # Vite's default dev port
+    "https://rohitkshirsagar19.github.io",  # Your deployed portfolio URL
 ]
 
 app.add_middleware(
