@@ -60,7 +60,7 @@ const Chatbot: React.FC<ChatbotProps> = ({ onClose }) => {
       console.error("Failed to get response from bot:", error);
       const errorMessage: Message = {
         sender: 'bot',
-        text: 'ERROR: Cannot connect to the AI mainframe. Please try again later.',
+        text: 'Works on desktop devices only ! 🫠',
       };
       setMessages((prev) => [...prev, errorMessage]);
     } finally {
