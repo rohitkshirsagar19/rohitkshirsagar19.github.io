@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { X } from 'lucide-react';
-import ReactMarkdown from 'react-markdown'; // <-- NEW: Import ReactMarkdown
-import remarkGfm from 'remark-gfm'; // <-- NEW: Import the GFM plugin
+import ReactMarkdown from 'react-markdown'; 
+import remarkGfm from 'remark-gfm'; 
 
 interface Message {
   sender: 'user' | 'bot';
@@ -27,7 +27,7 @@ const Chatbot: React.FC<ChatbotProps> = ({ onClose }) => {
     setMessages([
       {
         sender: 'bot',
-        text: "INITIALIZING... ROHIT-BOT v1.0 ONLINE. Ask me about Rohit's portfolio!",
+        text: "INITIALIZING... BioBot v1.0 ONLINE. Ask me about Rohit's portfolio!",
       },
     ]);
   }, []);
@@ -73,7 +73,7 @@ const Chatbot: React.FC<ChatbotProps> = ({ onClose }) => {
   return (
     <div className="fixed bottom-4 right-4 z-50 w-full max-w-sm h-[450px] pixel-border bg-retro-dark-gray p-4 flex flex-col animate-scale-in">
       <div className="flex justify-between items-center mb-2">
-        <h3 className="font-pixel text-lg text-retro-blue">ROHIT-BOT</h3>
+        <h3 className="font-pixel text-lg text-retro-blue">BioBOT</h3>
         <button onClick={onClose} className="text-retro-white hover:text-retro-purple transition-colors">
           <X size={20} />
         </button>
