@@ -12,7 +12,9 @@ interface ChatbotProps {
   onClose: () => void;
 }
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+const API_URL = 'https://rohitkshirsagar19-github-io.onrender.com';
+// For dev
+// const API_URL = 'http://127.0.0.1:8000';
 
 const Chatbot: React.FC<ChatbotProps> = ({ onClose }) => {
   const [messages, setMessages] = useState<Message[]>([]);
