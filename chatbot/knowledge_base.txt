@@ -20,6 +20,7 @@ Rohit worked as a Python Developer at MEGAMINDS IT Services from July 2024 to Se
 - Machine Learning A-Z from Udemy (2024)
 - Database Programming with SQL from Oracle Academy (2023)
 - Full Stack Development from Free Code Camp (2024)
+- Oracle Cloud Infrastructure 2025 Foundations Associate (1Z0-1085-25)
 
 ---
 # Technical Skills

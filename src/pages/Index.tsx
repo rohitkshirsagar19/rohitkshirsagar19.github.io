@@ -218,7 +218,7 @@ const Index = () => {
 
         <div className="mt-4 animate-float">
           <a
-            href="https://drive.google.com/drive/folders/1yVDAQEyGxztIlMf7V_cL_m8goIps4CvA?usp=drive_link" 
+            href="https://drive.google.com/file/d/1hQ4ifDUrQLnNpMVRvH-hfUEBtw0dz5rX/view?usp=sharing" 
             download="rohit_kshirsagar_resume.pdf" 
             className="pixel-button flex items-center mt-2"
           >
@@ -268,6 +268,8 @@ const Index = () => {
             </div>
           </div>
 
+          {/* CERTIFICATES */}
+
           <div className="animate-pixel-fade-in" style={{ animationDelay: '0.3s' }}>
             <div className="pixel-border bg-retro-dark-gray p-6 h-full">
               <div className="flex items-center mb-4">
@@ -295,6 +297,11 @@ const Index = () => {
                   name="Full Stack Development"
                   issuer="Free Code Camp"
                   year={2024}
+                />
+                <Certificate
+                  name="Oracle Cloud Infrastructure 2025 Foundations Associate (1Z0-1085-25)"
+                  issuer="Oracle"
+                  year={2025}
                 />
               </div>
             </div>
