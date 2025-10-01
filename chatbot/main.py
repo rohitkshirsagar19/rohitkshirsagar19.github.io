@@ -28,7 +28,8 @@ async def startup_event():
 class ChatRequest(BaseModel):
     query: str
 
-@app.get("/")
+@app.get("/",include_in_schema=False)
+@app.head("/")  # Updated for uptimebot 
 def read_root():
     return {"status": "ok"}
 
