@@ -27,7 +27,7 @@ const Chatbot: React.FC<ChatbotProps> = ({ onClose }) => {
     setMessages([
       {
         sender: 'bot',
-        text: "INITIALIZING... BioBot v2.0 ONLINE. Ask me about Rohit's portfolio!",
+        text: "INITIALIZING... BioBot v2.0 ONLINE. Ask me about Rohit's portfolio! (First question may take time due to cold start issue)",
       },
     ]);
   }, []);
