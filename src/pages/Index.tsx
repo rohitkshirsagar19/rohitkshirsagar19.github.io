@@ -13,6 +13,7 @@ import { Instagram } from 'lucide-react';
 import { FaRobot } from 'react-icons/fa';
 import Chatbot from '@/components/Chatbot';
 
+
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [textVisible, setTextVisible] = useState("");
@@ -44,11 +45,11 @@ const Index = () => {
       imageIndex: 1
     },
     {
-  title: "AI-Powered Multi-Disease Predictor",
-  description: "Developed a full-stack ML application for predicting multiple diseases using multiple trained models. Integrated FastAPI for backend APIs, a modern React (Vite) frontend with dynamic forms, and an MLflow pipeline for experiment tracking. Enabled user data submission and on-demand model retraining. Deployed the entire system on AWS using Docker containers—fully optimized for low-resource environments.",
-  technologies: ["React", "FastAPI", "MLflow", "Scikit-Learn", "Docker", "AWS","PyYAML","GitHub Actions"],
-  githubUrl: "https://github.com/rohitkshirsagar19/multi-disease-predictor",
-  imageIndex: 2
+      title: "AI-Powered Multi-Disease Predictor",
+      description: "Developed a full-stack ML application for predicting multiple diseases using multiple trained models. Integrated FastAPI for backend APIs, a modern React (Vite) frontend with dynamic forms, and an MLflow pipeline for experiment tracking. Enabled user data submission and on-demand model retraining. Deployed the entire system on AWS using Docker containers—fully optimized for low-resource environments.",
+      technologies: ["React", "FastAPI", "MLflow", "Scikit-Learn", "Docker", "AWS", "PyYAML", "GitHub Actions"],
+      githubUrl: "https://github.com/rohitkshirsagar19/multi-disease-predictor",
+      imageIndex: 2
     },
     {
       title: "AI Trends Research with CrewAI",
@@ -129,8 +130,8 @@ const Index = () => {
 
     return () => clearTimeout(timer);
   }, []);
-  
-  
+
+
   // Form submission handler
   const handleSendMessage = async (event) => {
     event.preventDefault();
@@ -205,7 +206,7 @@ const Index = () => {
             </p>
           </div>
         </div>
-        
+
         <div className="mt-12 animate-float">
           <button
             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
@@ -218,8 +219,8 @@ const Index = () => {
 
         <div className="mt-4 animate-float">
           <a
-            href="https://drive.google.com/file/d/1hQ4ifDUrQLnNpMVRvH-hfUEBtw0dz5rX/view?usp=sharing" 
-            download="rohit_kshirsagar_resume.pdf" 
+            href="https://drive.google.com/file/d/1hQ4ifDUrQLnNpMVRvH-hfUEBtw0dz5rX/view?usp=sharing"
+            download="rohit_kshirsagar_resume.pdf"
             className="pixel-button flex items-center mt-2"
           >
             DOWNLOAD RESUME
@@ -415,14 +416,14 @@ const Index = () => {
               <SkillBar name="Docker" level={3} />
               <SkillBar name="MLflow" level={2} />
               <SkillBar name="GitHub Actions" level={3} />
-               <SkillBar name="AWS" level={2.5} />
+              <SkillBar name="AWS" level={2.5} />
             </div>
           </div>
           {/* Tools & Technologies */}
           <div className="pixel-border bg-retro-dark-gray p-6 md:col-span-2 animate-pixel-fade-in" style={{ animationDelay: '0.4s' }}>
             <h3 className="font-pixel text-xl text-retro-yellow mb-6">TOOLS & TECHNOLOGIES</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {['Git', 'Linux', 'Bash', 'Jupyter', 'Pandas', 'Scikit-learn', 'NumPy', 'REST API', 'Supabase','LLM APIs'].map((tool, index) => (
+              {['Git', 'Linux', 'Bash', 'Jupyter', 'Pandas', 'Scikit-learn', 'NumPy', 'REST API', 'Supabase', 'LLM APIs'].map((tool, index) => (
                 <div key={index} className="bg-retro-dark-purple p-2 rounded text-center font-retro">
                   {tool}
                 </div>
@@ -559,7 +560,7 @@ const Index = () => {
                   className="w-full bg-retro-black border-2 border-retro-gray p-3 font-retro text-retro-light-gray focus:border-retro-purple outline-none resize-none"
                 ></textarea>
               </div>
-              
+
               <input type="text" name="_gotcha" style={{ display: 'none' }} />
               <button
                 type="submit"
@@ -586,13 +587,13 @@ const Index = () => {
 
       {isChatbotOpen && <Chatbot onClose={() => setIsChatbotOpen(false)} />}
       {/* --- END: Floating Chatbot Logic --- */}
-      
+
       <footer className="py-8 bg-retro-black">
         <div className="retro-container text-center">
-            <p className="font-retro text-retro-gray text-sm mb-4 italic animate-pixel-fade-in">Aamhi Saare Khavayye 😋</p>
-            <p className="font-pixel text-retro-light-gray text-sm">
-              © 2025 ROHIT KSHIRSAGAR • ALL RIGHTS RESERVED
-            </p>
+          <p className="font-retro text-retro-gray text-sm mb-4 italic animate-pixel-fade-in">Aamhi Saare Khavayye 😋</p>
+          <p className="font-pixel text-retro-light-gray text-sm">
+            © 2025 ROHIT KSHIRSAGAR • ALL RIGHTS RESERVED
+          </p>
         </div>
       </footer>
     </div>
