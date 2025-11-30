@@ -103,6 +103,13 @@ const Index = () => {
       githubUrl: "https://github.com/rohitkshirsagar19/fantasy-sports-machine-learning.git",
       imageIndex: 9
     },
+    {
+      title: "GoLang Custom LoadBalancer",
+      description: "Engineered a high-performance Layer 7 Load Balancer in Go using Round-Robin algorithms. Implemented thread-safe concurrency with Mutexes and active self-healing health checks via background Goroutines.",
+      technologies: ["Golang", "Concurrency", "Distributed Systems", "Networking"],
+      githubUrl: "https://github.com/rohitkshirsagar19/GO-Custom-LoadBalancer",
+      imageIndex: 10
+    },
   ];
 
   // Text typing effect
@@ -353,7 +360,7 @@ const Index = () => {
           {projects.slice(0, visibleProjects).map((project, index) => (
             <div
               key={index}
-              className="animate-pixel-fade-in"
+              className="animate-pixel-fade-in h-full"
               style={{ animationDelay: `${(index + 1) * 0.1}s` }}
             >
               <ProjectCard

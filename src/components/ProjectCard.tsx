@@ -27,19 +27,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     'from-retro-yellow to-retro-red',
     'from-retro-red to-retro-purple',
   ];
-  
+
   const colorClass = colors[imageIndex % colors.length];
 
   return (
-    <div className={`bg-gradient-to-br ${colorClass} rounded-lg p-1`}>
+    <div className={`bg-gradient-to-br ${colorClass} rounded-lg p-1 h-full`}>
       <div className="bg-retro-dark-gray p-4 rounded-md h-full flex flex-col">
         <div className="mb-4 flex items-center">
           <div className="w-6 h-6 bg-retro-gray rounded-md mr-2 animate-pixel-pulse"></div>
           <h3 className="font-pixel text-lg text-white">{title}</h3>
         </div>
-        
+
         <p className="font-retro text-retro-light-gray mb-4">{description}</p>
-        
+
         <div className="mb-4">
           <div className="flex flex-wrap gap-2">
             {technologies.map((tech, index) => (
@@ -52,7 +52,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             ))}
           </div>
         </div>
-        
+
         <div className="mt-auto flex space-x-3">
           {githubUrl && (
             <a
@@ -65,7 +65,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               <span className="font-retro text-sm">Code</span>
             </a>
           )}
-          
+
           {liveUrl && (
             <a
               href={liveUrl}
