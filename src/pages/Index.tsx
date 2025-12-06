@@ -110,6 +110,13 @@ const Index = () => {
       githubUrl: "https://github.com/rohitkshirsagar19/GO-Custom-LoadBalancer",
       imageIndex: 10
     },
+    {
+      title: "Go-Grab: Universal CLI Downloader",
+      description: "Developed an interactive TUI tool in Go using the Bubble Tea framework to orchestrate concurrent media downloads via yt-dlp. Implemented non-blocking I/O using Goroutines and Channels, featuring real-time stdout streaming and regex-based progress parsing.",
+      technologies: ["Golang", "Bubble Tea", "Concurrency", "Systems Engineering"],
+      githubUrl: "https://github.com/rohitkshirsagar19/go-grab",
+      imageIndex: 11
+    },
   ];
 
   // Text typing effect
@@ -400,7 +407,7 @@ const Index = () => {
               <SkillBar name="JavaScript" level={2} />
               <SkillBar name="SQL" level={2.5} />
               <SkillBar name="TypeScript" level={1} />
-              <SkillBar name="GO" level={1} />
+              <SkillBar name="GoLang" level={3.5} />
             </div>
           </div>
           {/* Frameworks */}
@@ -414,6 +421,7 @@ const Index = () => {
               <SkillBar name="Next.js" level={2} />
               <SkillBar name="TensorFlow" level={1} />
               <SkillBar name="CrewAI" level={1} />
+              <SkillBar name="LangChain" level={2} />
             </div>
           </div>
           {/* DevOps & Deployment */}
@@ -430,7 +438,7 @@ const Index = () => {
           <div className="pixel-border bg-retro-dark-gray p-6 md:col-span-2 animate-pixel-fade-in" style={{ animationDelay: '0.4s' }}>
             <h3 className="font-pixel text-xl text-retro-yellow mb-6">TOOLS & TECHNOLOGIES</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {['Git', 'Linux', 'Bash', 'Jupyter', 'Pandas', 'Scikit-learn', 'NumPy', 'REST API', 'Supabase', 'LLM APIs'].map((tool, index) => (
+              {['Git', 'Linux', 'Bash', 'Jupyter', 'Pandas', 'Scikit-learn', 'NumPy', 'REST API', 'Supabase', 'LLM APIs','RAG'].map((tool, index) => (
                 <div key={index} className="bg-retro-dark-purple p-2 rounded text-center font-retro">
                   {tool}
                 </div>
@@ -444,6 +452,8 @@ const Index = () => {
               <SkillBar name="MySQL" level={3} />
               <SkillBar name="PostgreSQL" level={2.5} />
               <SkillBar name="MongoDB" level={2} />
+              <SkillBar name="Qdrant (Vector DB)" level={2.5} />
+              <SkillBar name="SQLite" level={2.5} />
             </div>
           </div>
           {/* Soft Skills */}
