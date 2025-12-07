@@ -513,10 +513,7 @@ const Index = () => {
             <h3 className="font-pixel text-xl text-retro-blue mb-6">GET IN TOUCH</h3>
 
             <div className="space-y-4 font-retro">
-              <a href="tel:9834978407" className="flex items-center text-retro-light-gray hover:text-retro-purple transition-colors group">
-                <Phone className="w-5 h-5 mr-3 group-hover:text-retro-purple" />
-                <span>(+91) 9834978407</span>
-              </a>
+
 
               <a href="mailto:rohitkshirsagar1904@gmail.com" className="flex items-center text-retro-light-gray hover:text-retro-purple transition-colors group">
                 <AtSign className="w-5 h-5 mr-3 group-hover:text-retro-purple" />
