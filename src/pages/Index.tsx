@@ -4,7 +4,7 @@ import {
   Github, Linkedin, Phone, AtSign, ChevronDown, Trophy, Clock
 } from 'lucide-react';
 import Navigation from '@/components/Navigation';
-import SkillBar from '@/components/SkillBar';
+
 import ProjectCard from '@/components/ProjectCard';
 import Certificate from '@/components/Certificate';
 import { Download } from 'lucide-react';
@@ -16,8 +16,9 @@ import Chatbot from '@/components/Chatbot';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [showLoader, setShowLoader] = useState(true);
   const [textVisible, setTextVisible] = useState("");
-  const fullText = "AI & Data Science Enthusiast | Python Developer";
+  const fullText = "Incoming SDE | GenAI Engineer | Golang & Systems | LLMs & Backend Dev";
 
   // State for form fields
   const [name, setName] = useState('');
@@ -140,6 +141,7 @@ const Index = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
+      setTimeout(() => setShowLoader(false), 500); // Wait for fade out
     }, 2000);
 
     return () => clearTimeout(timer);
@@ -190,23 +192,22 @@ const Index = () => {
     }
   };
 
-  if (isLoading) {
-    return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-retro-black">
-        <div className="animate-pixel-pulse">
-          <Gamepad2 className="w-16 h-16 text-retro-purple" />
-        </div>
-        <h1 className="font-pixel text-retro-purple mt-4 text-xl">LOADING...</h1>
-        <div className="w-64 h-4 bg-retro-dark-gray mt-4">
-          <div className="h-full bg-retro-purple animate-pulse" style={{ width: '60%' }}></div>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="min-h-screen pt-0 md:pt-16">
+    <div className="min-h-screen pt-0 md:pt-16 relative">
       <Navigation />
+
+      {/* Loading Screen Overlay */}
+      {showLoader && (
+        <div className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-retro-black transition-opacity duration-500 ${!isLoading ? 'opacity-0' : 'opacity-100'}`}>
+          <div className="animate-pixel-pulse">
+            <Gamepad2 className="w-16 h-16 text-retro-purple" />
+          </div>
+          <h1 className="font-pixel text-retro-purple mt-4 text-xl">LOADING...</h1>
+          <div className="w-64 h-4 bg-retro-dark-gray mt-4">
+            <div className="h-full bg-retro-purple animate-pulse" style={{ width: '60%' }}></div>
+          </div>
+        </div>
+      )}
 
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex flex-col items-center justify-center py-16 md:py-0">
@@ -233,7 +234,7 @@ const Index = () => {
 
         <div className="mt-4 animate-float">
           <a
-            href="https://drive.google.com/file/d/1hQ4ifDUrQLnNpMVRvH-hfUEBtw0dz5rX/view?usp=sharing"
+            href="https://drive.google.com/file/d/1dx-xGzTkYDoPOAtsZJ7L2x4XVfSxqvGc/view?usp=drive_link"
             download="rohit_kshirsagar_resume.pdf"
             className="pixel-button flex items-center mt-2"
           >
@@ -329,11 +330,41 @@ const Index = () => {
 
         <h2 className="section-title">EXPERIENCE</h2>
 
+        {/* 1. ApexAI Experience (New - June 2025) */}
+        <div className="pixel-border bg-retro-dark-gray p-6 animate-pixel-fade-in mb-8">
+          <div className="flex items-start md:items-center flex-col md:flex-row mb-4">
+            <h3 className="font-pixel text-xl text-retro-blue">AI Engineer Intern</h3>
+            <span className="md:mx-4 text-retro-light-gray hidden md:inline">•</span>
+            <span className="font-retro text-retro-light-gray mt-1 md:mt-0">ApexAI Solutions Pvt Ltd</span>
+          </div>
+
+          <div className="flex items-center mb-4">
+            <Clock className="w-4 h-4 text-retro-light-gray mr-2" />
+            <span className="font-retro text-sm text-retro-light-gray">June 2025 – September 2025</span>
+          </div>
+
+          <ul className="space-y-2 font-retro">
+            <li className="flex items-start">
+              <span className="text-retro-blue mr-2">↳</span>
+              <span>Developed multilingual NLP pipeline for Hinglish transcripts using fine-tuned Qwen-3 32B (95% accuracy)</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-retro-blue mr-2">↳</span>
+              <span>Built LLM-powered transcript-to-JSON tool, reducing manual review effort by 80%</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-retro-blue mr-2">↳</span>
+              <span>Managed project execution and client communications to ensure timely NLP solution delivery</span>
+            </li>
+          </ul>
+        </div>
+
+        {/* 2. Megaminds Experience (Updated - July 2024) */}
         <div className="pixel-border bg-retro-dark-gray p-6 animate-pixel-fade-in">
           <div className="flex items-start md:items-center flex-col md:flex-row mb-4">
             <h3 className="font-pixel text-xl text-retro-blue">Python Developer</h3>
-            <span className="md:mx-4 text-retro-light-gray">•</span>
-            <span className="font-retro text-retro-light-gray"><a href="https://megamindsit.in/">MEGAMINDS IT Services</a></span>
+            <span className="md:mx-4 text-retro-light-gray hidden md:inline">•</span>
+            <span className="font-retro text-retro-light-gray mt-1 md:mt-0"><a href="https://megamindsit.in/" target="_blank" rel="noopener noreferrer" className="hover:text-retro-blue transition-colors">MEGAMINDS IT Services</a></span>
           </div>
 
           <div className="flex items-center mb-4">
@@ -344,15 +375,15 @@ const Index = () => {
           <ul className="space-y-2 font-retro">
             <li className="flex items-start">
               <span className="text-retro-blue mr-2">↳</span>
-              <span>Designed and implemented Python solutions to optimize workflows and analyze data</span>
+              <span>Designed Python-based academic solutions, implementing algorithms from 5+ research papers</span>
             </li>
             <li className="flex items-start">
               <span className="text-retro-blue mr-2">↳</span>
-              <span>Developed data pipelines to enhance data-driven decision making</span>
+              <span>Optimized data preprocessing pipelines, improving ML model accuracy by 15%</span>
             </li>
             <li className="flex items-start">
               <span className="text-retro-blue mr-2">↳</span>
-              <span>Collaborated with cross-functional teams to integrate AI-powered features</span>
+              <span>Contributed to the timely delivery of 3+ projects alongside the R&D team</span>
             </li>
           </ul>
         </div>
@@ -401,69 +432,72 @@ const Index = () => {
           {/* Programming */}
           <div className="pixel-border bg-retro-dark-gray p-6 animate-pixel-fade-in">
             <h3 className="font-pixel text-xl text-retro-green mb-6">PROGRAMMING</h3>
-            <div>
-              <SkillBar name="Python" level={5} />
-              <SkillBar name="C++" level={3} />
-              <SkillBar name="JavaScript" level={2} />
-              <SkillBar name="SQL" level={2.5} />
-              <SkillBar name="TypeScript" level={1} />
-              <SkillBar name="GoLang" level={3.5} />
+            <div className="grid grid-cols-2 gap-4">
+              {['Python', 'C++', 'JavaScript', 'SQL', 'TypeScript', 'GoLang'].map((skill) => (
+                <div key={skill} className="bg-retro-black border border-retro-green/30 p-2 rounded text-center font-retro text-retro-green hover:border-retro-green transition-colors">
+                  {skill}
+                </div>
+              ))}
             </div>
           </div>
+
           {/* Frameworks */}
           <div className="pixel-border bg-retro-dark-gray p-6 animate-pixel-fade-in" style={{ animationDelay: '0.2s' }}>
             <h3 className="font-pixel text-xl text-retro-blue mb-6">FRAMEWORKS</h3>
-            <div>
-              <SkillBar name="Flask" level={4} />
-              <SkillBar name="FastAPI" level={3.3} />
-              <SkillBar name="Django" level={2.3} />
-              <SkillBar name="Streamlit" level={4} />
-              <SkillBar name="Next.js" level={2} />
-              <SkillBar name="TensorFlow" level={1} />
-              <SkillBar name="CrewAI" level={1} />
-              <SkillBar name="LangChain" level={2} />
+            <div className="grid grid-cols-2 gap-4">
+              {['Flask', 'FastAPI', 'Django', 'Streamlit', 'Next.js', 'TensorFlow', 'CrewAI', 'LangChain'].map((skill) => (
+                <div key={skill} className="bg-retro-black border border-retro-blue/30 p-2 rounded text-center font-retro text-retro-blue hover:border-retro-blue transition-colors">
+                  {skill}
+                </div>
+              ))}
             </div>
           </div>
+
           {/* DevOps & Deployment */}
           <div className="pixel-border bg-retro-dark-gray p-6 animate-pixel-fade-in" style={{ animationDelay: '0.3s' }}>
             <h3 className="font-pixel text-xl text-retro-pink mb-6">DEVOPS & DEPLOYMENT</h3>
-            <div>
-              <SkillBar name="Docker" level={3} />
-              <SkillBar name="MLflow" level={2} />
-              <SkillBar name="GitHub Actions" level={3} />
-              <SkillBar name="AWS" level={2.5} />
+            <div className="grid grid-cols-2 gap-4">
+              {['Docker', 'MLflow', 'GitHub Actions', 'AWS'].map((skill) => (
+                <div key={skill} className="bg-retro-black border border-retro-pink/30 p-2 rounded text-center font-retro text-retro-pink hover:border-retro-pink transition-colors">
+                  {skill}
+                </div>
+              ))}
             </div>
           </div>
+
           {/* Tools & Technologies */}
-          <div className="pixel-border bg-retro-dark-gray p-6 md:col-span-2 animate-pixel-fade-in" style={{ animationDelay: '0.4s' }}>
+          <div className="pixel-border bg-retro-dark-gray p-6 animate-pixel-fade-in" style={{ animationDelay: '0.4s' }}>
             <h3 className="font-pixel text-xl text-retro-yellow mb-6">TOOLS & TECHNOLOGIES</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {['Git', 'Linux', 'Bash', 'Jupyter', 'Pandas', 'Scikit-learn', 'NumPy', 'REST API', 'Supabase', 'LLM APIs','RAG'].map((tool, index) => (
-                <div key={index} className="bg-retro-dark-purple p-2 rounded text-center font-retro">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {['Git', 'Linux', 'Bash', 'Jupyter', 'Pandas', 'Scikit-learn', 'NumPy', 'REST API', 'Supabase', 'LLM APIs', 'RAG'].map((tool) => (
+                <div key={tool} className="bg-retro-black border border-retro-yellow/30 p-2 rounded text-center font-retro text-retro-yellow hover:border-retro-yellow transition-colors">
                   {tool}
                 </div>
               ))}
             </div>
           </div>
+
           {/* Databases */}
           <div className="pixel-border bg-retro-dark-gray p-6 animate-pixel-fade-in" style={{ animationDelay: '0.5s' }}>
             <h3 className="font-pixel text-xl text-retro-orange mb-6">DATABASES</h3>
-            <div>
-              <SkillBar name="MySQL" level={3} />
-              <SkillBar name="PostgreSQL" level={2.5} />
-              <SkillBar name="MongoDB" level={2} />
-              <SkillBar name="Qdrant (Vector DB)" level={2.5} />
-              <SkillBar name="SQLite" level={2.5} />
+            <div className="grid grid-cols-2 gap-4">
+              {['MySQL', 'PostgreSQL', 'MongoDB', 'Qdrant (Vector DB)', 'SQLite'].map((skill) => (
+                <div key={skill} className="bg-retro-black border border-retro-orange/30 p-2 rounded text-center font-retro text-retro-orange hover:border-retro-orange transition-colors">
+                  {skill}
+                </div>
+              ))}
             </div>
           </div>
+
           {/* Soft Skills */}
           <div className="pixel-border bg-retro-dark-gray p-6 animate-pixel-fade-in" style={{ animationDelay: '0.6s' }}>
             <h3 className="font-pixel text-xl text-retro-white mb-6">SOFT SKILLS</h3>
-            <div>
-              <SkillBar name="Teamwork" level={4} />
-              <SkillBar name="Problem Solving" level={5} />
-              <SkillBar name="Communication" level={5} />
-              <SkillBar name="Research" level={4.6} />
+            <div className="grid grid-cols-2 gap-4">
+              {['Teamwork', 'Problem Solving', 'Communication', 'Research'].map((skill) => (
+                <div key={skill} className="bg-retro-black border border-retro-white/30 p-2 rounded text-center font-retro text-retro-white hover:border-retro-white transition-colors">
+                  {skill}
+                </div>
+              ))}
             </div>
           </div>
         </div>
