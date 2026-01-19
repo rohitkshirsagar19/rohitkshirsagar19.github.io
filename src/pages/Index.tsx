@@ -6,6 +6,7 @@ import { projects } from '@/data/projects';
 import { Download, Gamepad2, ChevronRight, Trophy } from 'lucide-react';
 import { FaRobot } from 'react-icons/fa';
 import Chatbot from '@/components/Chatbot';
+import SEOManager from '@/components/SEOManager';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -37,6 +38,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen pt-0 md:pt-16 relative bg-retro-black">
+      <SEOManager title="Home" />
       <Navigation />
 
       {/* Loading Screen Overlay */}
@@ -92,7 +94,7 @@ const Index = () => {
               My engineering focus lies at the intersection of Distributed Systems and Generative AI. I believe the best software is built by understanding both the model layer and the infrastructure layer.
             </p>
             <p className="font-retro text-lg mb-6">
-              
+
             </p>
 
             <div className="mt-8 bg-retro-black p-4 rounded border border-retro-yellow/30">

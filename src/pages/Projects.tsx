@@ -2,10 +2,12 @@ import React from 'react';
 import Navigation from '@/components/Navigation';
 import ProjectCard from '@/components/ProjectCard';
 import { projects } from '@/data/projects';
+import SEOManager from '@/components/SEOManager';
 
 const Projects = () => {
     return (
         <div className="min-h-screen pt-16 relative bg-retro-black">
+            <SEOManager title="Projects" description="Showcase of my latest projects involving AI, Systems, and Web Development." />
             <Navigation />
 
             <main className="retro-container py-12">

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import { AtSign, Github, Linkedin, Instagram } from 'lucide-react';
 import { toast } from "@/hooks/use-toast";
+import SEOManager from '@/components/SEOManager';
 
 const Contact = () => {
     const [name, setName] = useState('');
@@ -52,6 +53,7 @@ const Contact = () => {
 
     return (
         <div className="min-h-screen pt-16 relative bg-retro-black">
+            <SEOManager title="Contact" description="Get in touch with me." />
             <Navigation />
 
             <main className="retro-container py-12">

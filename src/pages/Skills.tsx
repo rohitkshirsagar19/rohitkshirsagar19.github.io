@@ -1,10 +1,12 @@
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import { skillCategories } from '@/data/skills';
+import SEOManager from '@/components/SEOManager';
 
 const Skills = () => {
     return (
         <div className="min-h-screen pt-16 relative bg-retro-black">
+            <SEOManager title="Skills" description="My technical skills and arsenal." />
             <Navigation />
 
             <main className="retro-container py-12">

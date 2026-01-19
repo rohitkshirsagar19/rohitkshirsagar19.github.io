@@ -3,10 +3,12 @@ import Navigation from '@/components/Navigation';
 import { experiences, education, certificates } from '@/data/experience';
 import { Clock, Award } from 'lucide-react';
 import Certificate from '@/components/Certificate';
+import SEOManager from '@/components/SEOManager';
 
 const Experience = () => {
     return (
         <div className="min-h-screen pt-16 relative bg-retro-black">
+            <SEOManager title="Experience" description="My professional journey and career highlights." />
             <Navigation />
 
             <main className="retro-container py-12">

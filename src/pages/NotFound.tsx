@@ -1,51 +1,54 @@
-import { useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { Gamepad2, AlertTriangle } from "lucide-react";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useSound } from "@/context/SoundContext";
+import { Helmet } from "react-helmet-async";
 
-const NotFound = () => {
-  const location = useLocation();
-  const [funMessage, setFunMessage] = useState("");
+const NotFound: React.FC = () => {
+  const { playError, playClick } = useSound();
 
   useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
-    );
-
-    // Generate a random fun message with a retro twist
-    const messages = [
-      "404: Page not found. It must have glitched out in the matrix!",
-      "Oops! This page got pixelated into oblivion.",
-      "Level not found. Insert coin to continue?",
-      "404 Error: The page has been abducted by aliens. 👾",
-      "Whoops! This route crashed harder than a retro game cartridge.",
-      "Page missing. Maybe it's stuck in an infinite loop?",
-      "404: Reality glitch detected. Press reset to try again.",
-      "The page you're seeking has leveled up and left the server."
-    ];
-    const randomIndex = Math.floor(Math.random() * messages.length);
-    setFunMessage(messages[randomIndex]);
-  }, [location.pathname]);
+    playError();
+  }, [playError]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-retro-black">
-      <div className="text-center pixel-border bg-retro-dark-gray p-8 animate-pixel-fade-in">
-        <div className="mb-6 animate-pixel-pulse">
-          <AlertTriangle className="w-24 h-24 mx-auto text-retro-purple" />
-        </div>
-        <h1 className="font-pixel text-6xl text-retro-purple mb-4 animate-blink">
-          404
+    <div className="min-h-screen bg-[#0000AA] text-white font-mono p-8 md:p-16 flex flex-col items-center justify-center relative overscroll-none overflow-hidden selection:bg-white selection:text-[#0000AA]">
+      <Helmet>
+        <title>404 Error - BSOD | Rohit Kshirsagar</title>
+        <meta name="theme-color" content="#0000AA" />
+      </Helmet>
+
+      <div className="max-w-4xl w-full animate-pixel-fade-in">
+        <h1 className="text-xl md:text-3xl mb-8 bg-white text-[#0000AA] inline-block px-2">
+          *** STOP: 0x0000404 (PAGE_NOT_FOUND_EXCEPTION)
         </h1>
-        <p className="font-retro text-xl text-retro-light-gray mb-6">
-          {funMessage}
+
+        <p className="mb-6 text-lg md:text-xl">
+          A fatal exception 404 has occurred at 0028:C0011E36 in VXD VMM(01) +
+          00010E36. The current application will be terminated.
         </p>
-        <a
-          href="/"
-          className="pixel-button flex items-center justify-center mx-auto"
-        >
-          RETURN TO HOME BASE
-          <Gamepad2 className="ml-2 w-5 h-5" />
-        </a>
+
+        <ul className="mb-8 list-disc list-inside space-y-2 text-lg md:text-xl">
+          <li>Check to make sure any URLs you typed are correct.</li>
+          <li>If this is the first time you've seen this stop error screen, congratulations! You found a secret.</li>
+          <li>Press any key to continue (or click the button below).</li>
+        </ul>
+
+        <div className="mt-12 text-center md:text-left">
+          <p className="mb-4">Press ENTER to return to Windows (Home)</p>
+          <Link
+            to="/"
+            onClick={playClick}
+            className="inline-block border-2 border-white px-6 py-2 hover:bg-white hover:text-[#0000AA] transition-colors duration-0 font-bold"
+          >
+            Press any key to continue _
+          </Link>
+        </div>
+      </div>
+
+      <div className="absolute bottom-8 left-8 text-sm opacity-70">
+        <p>Technical Information:</p>
+        <p>*** STOP: 0x00000000 (0x00000000, 0x00000000, 0x00000000, 0x00000000)</p>
+        <p>*** rohitkshirsagar19.sys - Address F86B5A10 base at F86B5000, DateStamp 3dd991eb</p>
       </div>
     </div>
   );
