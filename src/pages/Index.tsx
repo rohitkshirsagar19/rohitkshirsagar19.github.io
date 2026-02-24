@@ -12,7 +12,7 @@ const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showLoader, setShowLoader] = useState(true);
   const [textVisible, setTextVisible] = useState("");
-  const fullText = "Incoming SDE | GenAI Engineer | Golang & Systems | LLMs & Backend Dev";
+  const fullText = "Engineering Intern @ Tessact | Building Video AI Infrastructure";
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
 
   // Text typing effect
