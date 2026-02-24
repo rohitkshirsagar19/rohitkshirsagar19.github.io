@@ -98,10 +98,10 @@ export default {
 				},
 				'pixel-bounce': {
 					'0%, 100%': { transform: 'translateY(0)' },
-					'50%': { transform: 'translateY(-4px)' },
+					'50%': { transform: 'translateY(-6px)' },
 				},
 				'pixel-fade-in': {
-					'0%': { opacity: '0', transform: 'translateY(8px)' },
+					'0%': { opacity: '0', transform: 'translateY(12px)' },
 					'100%': { opacity: '1', transform: 'translateY(0)' },
 				},
 				'pixel-pulse': {
@@ -109,12 +109,12 @@ export default {
 					'50%': { transform: 'scale(1.05)' },
 				},
 				'pixelate': {
-					'0%': { filter: 'blur(10px)' },
-					'100%': { filter: 'blur(0)' },
+					'0%': { filter: 'blur(12px)', opacity: '0.8' },
+					'100%': { filter: 'blur(0)', opacity: '1' },
 				},
 				'float': {
 					'0%, 100%': { transform: 'translateY(0)' },
-					'50%': { transform: 'translateY(-5px)' },
+					'50%': { transform: 'translateY(-8px)' },
 				},
 				'blink': {
 					'0%, 100%': { opacity: '1' },
@@ -124,12 +124,12 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'pixel-bounce': 'pixel-bounce 0.5s infinite',
-				'pixel-fade-in': 'pixel-fade-in 0.3s ease-out',
-				'pixel-pulse': 'pixel-pulse 2s infinite',
-				'pixelate': 'pixelate 0.5s ease-out',
-				'float': 'float 3s ease-in-out infinite',
-				'blink': 'blink 1s ease-in-out infinite'
+				'pixel-bounce': 'pixel-bounce 0.8s ease-in-out infinite',
+				'pixel-fade-in': 'pixel-fade-in 0.6s ease-out',
+				'pixel-pulse': 'pixel-pulse 3s ease-in-out infinite',
+				'pixelate': 'pixelate 0.8s ease-out',
+				'float': 'float 4s ease-in-out infinite',
+				'blink': 'blink 1.2s ease-in-out infinite'
 			},
 			fontFamily: {
 				'pixel': ['"Press Start 2P"', 'cursive'],

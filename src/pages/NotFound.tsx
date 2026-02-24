@@ -1,15 +1,8 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useSound } from "@/context/SoundContext";
 import { Helmet } from "react-helmet-async";
 
 const NotFound: React.FC = () => {
-  const { playError, playClick } = useSound();
-
-  useEffect(() => {
-    playError();
-  }, [playError]);
-
   return (
     <div className="min-h-screen bg-[#0000AA] text-white font-mono p-8 md:p-16 flex flex-col items-center justify-center relative overscroll-none overflow-hidden selection:bg-white selection:text-[#0000AA]">
       <Helmet>
@@ -37,7 +30,6 @@ const NotFound: React.FC = () => {
           <p className="mb-4">Press ENTER to return to Windows (Home)</p>
           <Link
             to="/"
-            onClick={playClick}
             className="inline-block border-2 border-white px-6 py-2 hover:bg-white hover:text-[#0000AA] transition-colors duration-0 font-bold"
           >
             Press any key to continue _

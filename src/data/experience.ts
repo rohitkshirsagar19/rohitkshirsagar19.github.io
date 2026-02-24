@@ -23,6 +23,15 @@ export interface Certificate {
 
 export const experiences: Experience[] = [
     {
+        role: "Engineering Intern",
+        company: "Tessact",
+        period: "Feb 2026 – Present",
+        description: [
+            "Building Video AI Infrastructure"
+        ],
+        color: "text-retro-blue"
+    },
+    {
         role: "AI Engineer Intern",
         company: "ApexAI Solutions Pvt Ltd",
         period: "June 2025 – September 2025",

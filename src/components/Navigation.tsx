@@ -1,17 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Gamepad2, Briefcase, Award, Laptop, Mail, Volume2, VolumeX, Terminal } from 'lucide-react';
-import { useSound } from '@/context/SoundContext';
+import { Gamepad2, Briefcase, Award, Laptop, Mail } from 'lucide-react';
 
 const Navigation: React.FC = () => {
-  const { playClick, playHover, toggleMute, isMuted } = useSound();
 
   const navItems = [
     { name: 'Home', path: '/', icon: Gamepad2 },
     { name: 'Projects', path: '/projects', icon: Laptop },
     { name: 'Experience', path: '/experience', icon: Briefcase },
     { name: 'Skills', path: '/skills', icon: Award },
-    { name: 'Logs', path: '/logs', icon: Terminal },
     { name: 'Contact', path: '/contact', icon: Mail },
   ];
 
@@ -26,8 +23,6 @@ const Navigation: React.FC = () => {
             <NavLink
               key={item.name}
               to={item.path}
-              onClick={playClick}
-              onMouseEnter={playHover}
               className={({ isActive }) =>
                 `flex flex-col items-center transition-colors group ${isActive ? 'text-retro-purple' : 'text-retro-light-gray hover:text-retro-purple'
                 }`
@@ -38,18 +33,6 @@ const Navigation: React.FC = () => {
             </NavLink>
           ))}
         </div>
-
-        {/* Mute Toggle */}
-        <button
-          onClick={() => {
-            toggleMute();
-            if (isMuted) playClick(); // Play click sound if unmuting
-          }}
-          className="text-retro-light-gray hover:text-retro-purple transition-colors p-2"
-          aria-label={isMuted ? "Unmute sounds" : "Mute sounds"}
-        >
-          {isMuted ? <VolumeX className="w-6 h-6" /> : <Volume2 className="w-6 h-6" />}
-        </button>
       </div>
     </nav>
   );
