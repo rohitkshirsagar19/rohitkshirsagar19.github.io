@@ -11,6 +11,7 @@ import { Download } from 'lucide-react';
 import { toast } from "@/hooks/use-toast";
 import { FaRobot } from 'react-icons/fa';
 import Chatbot from '@/components/Chatbot';
+import { experiences } from '@/data/experience';
 
 
 const Index = () => {
@@ -332,32 +333,42 @@ const Index = () => {
 
         <h2 className="section-title">EXPERIENCE</h2>
 
-        <div className="pixel-border bg-retro-dark-gray p-6 animate-pixel-fade-in">
-          <div className="flex items-start md:items-center flex-col md:flex-row mb-4">
-            <h3 className="font-pixel text-xl text-retro-blue">Python Developer</h3>
-            <span className="md:mx-4 text-retro-light-gray">•</span>
-            <span className="font-retro text-retro-light-gray"><a href="https://megamindsit.in/">MEGAMINDS IT Services</a></span>
-          </div>
+        <div className="space-y-8">
+          {experiences.map((exp, index) => (
+            <div
+              key={`${exp.company}-${exp.role}`}
+              className="pixel-border bg-retro-dark-gray p-6 animate-pixel-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="flex items-start md:items-center flex-col md:flex-row mb-4">
+                <h3 className={`font-pixel text-xl ${exp.color}`}>{exp.role}</h3>
+                <span className="md:mx-4 text-retro-light-gray hidden md:inline">•</span>
+                <span className="font-retro text-retro-light-gray mt-1 md:mt-0">
+                  {exp.companyUrl ? (
+                    <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer" className="hover:text-retro-blue transition-colors">
+                      {exp.company}
+                    </a>
+                  ) : (
+                    exp.company
+                  )}
+                </span>
+              </div>
 
-          <div className="flex items-center mb-4">
-            <Clock className="w-4 h-4 text-retro-light-gray mr-2" />
-            <span className="font-retro text-sm text-retro-light-gray">July 2024 - September 2024</span>
-          </div>
+              <div className="flex items-center mb-4">
+                <Clock className="w-4 h-4 text-retro-light-gray mr-2" />
+                <span className="font-retro text-sm text-retro-light-gray">{exp.period}</span>
+              </div>
 
-          <ul className="space-y-2 font-retro">
-            <li className="flex items-start">
-              <span className="text-retro-blue mr-2">↳</span>
-              <span>Designed and implemented Python solutions to optimize workflows and analyze data</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-retro-blue mr-2">↳</span>
-              <span>Developed data pipelines to enhance data-driven decision making</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-retro-blue mr-2">↳</span>
-              <span>Collaborated with cross-functional teams to integrate AI-powered features</span>
-            </li>
-          </ul>
+              <ul className="space-y-2 font-retro">
+                {exp.description.map((item, idx) => (
+                  <li key={idx} className="flex items-start">
+                    <span className="text-retro-blue mr-2">↳</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
       </section>
