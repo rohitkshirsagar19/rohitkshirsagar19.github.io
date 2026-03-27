@@ -9,7 +9,6 @@ import ProjectCard from '@/components/ProjectCard';
 import Certificate from '@/components/Certificate';
 import { Download } from 'lucide-react';
 import { toast } from "@/hooks/use-toast";
-import { Instagram } from 'lucide-react';
 import { FaRobot } from 'react-icons/fa';
 import Chatbot from '@/components/Chatbot';
 
@@ -17,7 +16,7 @@ import Chatbot from '@/components/Chatbot';
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [textVisible, setTextVisible] = useState("");
-  const fullText = "AI & Data Science Enthusiast | Python Developer";
+  const fullText = "Software Engineer Intern @ Tessact | GenAI & Backend Systems";
 
   // State for form fields
   const [name, setName] = useState('');
@@ -255,14 +254,13 @@ const Index = () => {
           <div className="md:col-span-2">
             <div className="pixel-border bg-retro-dark-gray p-6 animate-pixel-fade-in">
               <p className="font-retro text-lg mb-6">
-                I'm an AI and Data Science student passionate about building intelligent
-                applications. Currently pursuing my B.Tech in Computer Science with a focus
-                on AI and Data Science at AISSMS Institute in Pune.
+                I'm a Backend and AI Engineer focused on building scalable distributed systems
+                and production-grade AI agents. Currently, I'm engineering high-throughput
+                video AI infrastructure at Tessact in Bangalore.
               </p>
               <p className="font-retro text-lg">
-                As a Python Developer at MEGAMINDS IT Services, I designed and implemented
-                solutions to optimize workflows and enhance data-driven decision making.
-                I'm constantly exploring new technologies and approaches to solve complex problems.
+                I specialize in bridging the gap between applied machine learning and robust
+                backend architecture using Python, Go, and async workflows.
               </p>
 
               <div className="mt-8">
@@ -317,6 +315,11 @@ const Index = () => {
                   name="Oracle Cloud Infrastructure 2025 Foundations Associate (1Z0-1085-25)"
                   issuer="Oracle"
                   year={2025}
+                />
+                <Certificate
+                  name="Microsoft Certified: Azure AI Fundamentals"
+                  issuer="Microsoft"
+                  year={2026}
                 />
               </div>
             </div>
@@ -422,6 +425,8 @@ const Index = () => {
               <SkillBar name="TensorFlow" level={1} />
               <SkillBar name="CrewAI" level={1} />
               <SkillBar name="LangChain" level={2} />
+              <SkillBar name="Pydantic" level={3} />
+              <SkillBar name="Celery" level={2.5} />
             </div>
           </div>
           {/* DevOps & Deployment */}
@@ -438,7 +443,7 @@ const Index = () => {
           <div className="pixel-border bg-retro-dark-gray p-6 md:col-span-2 animate-pixel-fade-in" style={{ animationDelay: '0.4s' }}>
             <h3 className="font-pixel text-xl text-retro-yellow mb-6">TOOLS & TECHNOLOGIES</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {['Git', 'Linux', 'Bash', 'Jupyter', 'Pandas', 'Scikit-learn', 'NumPy', 'REST API', 'Supabase', 'LLM APIs', 'RAG'].map((tool, index) => (
+              {['Git', 'Linux', 'Bash', 'Jupyter', 'Pandas', 'Scikit-learn', 'NumPy', 'REST API', 'Supabase', 'LLM APIs', 'RAG', 'Redis', 'FFmpeg'].map((tool, index) => (
                 <div key={index} className="bg-retro-dark-purple p-2 rounded text-center font-retro">
                   {tool}
                 </div>
@@ -530,9 +535,9 @@ const Index = () => {
                 <span>github.com/rohitkshirsagar19</span>
               </a>
 
-              <a href="https://www.instagram.com/rohitkshirsagar19" target="_blank" rel="noopener noreferrer" className="flex items-center text-retro-light-gray hover:text-retro-purple transition-colors group">
-                <Instagram className="w-5 h-5 mr-3 group-hover:text-retro-purple" />
-                <span>instagram.com/rohitkshirsagar19</span>
+              <a href="https://x.com/_rohitk19" target="_blank" rel="noopener noreferrer" className="flex items-center text-retro-light-gray hover:text-retro-purple transition-colors group">
+                <span className="mr-3 font-pixel text-sm leading-none group-hover:text-retro-purple">X</span>
+                <span>x.com/_rohitk19</span>
               </a>
             </div>
           </div>
@@ -606,7 +611,7 @@ const Index = () => {
         <div className="retro-container text-center">
           <p className="font-retro text-retro-gray text-sm mb-4 italic animate-pixel-fade-in">Aamhi Saare Khavayye 😋</p>
           <p className="font-pixel text-retro-light-gray text-sm">
-            © 2025 ROHIT KSHIRSAGAR • ALL RIGHTS RESERVED
+            © 2026 ROHIT KSHIRSAGAR • ALL RIGHTS RESERVED
           </p>
         </div>
       </footer>

@@ -6,9 +6,9 @@ export interface SkillCategory {
 
 export const skillsRaw = {
     programming: ['Python', 'C++', 'JavaScript', 'SQL', 'TypeScript', 'GoLang'],
-    frameworks: ['Flask', 'FastAPI', 'Django', 'Streamlit', 'Next.js', 'TensorFlow', 'CrewAI', 'LangChain'],
+    frameworks: ['Flask', 'FastAPI', 'Django', 'Streamlit', 'Next.js', 'TensorFlow', 'CrewAI', 'LangChain', 'Pydantic', 'Celery'],
     devops: ['Docker', 'MLflow', 'GitHub Actions', 'AWS'],
-    tools: ['Git', 'Linux', 'Bash', 'Jupyter', 'Pandas', 'Scikit-learn', 'NumPy', 'REST API', 'Supabase', 'LLM APIs', 'RAG'],
+    tools: ['Git', 'Linux', 'Bash', 'Jupyter', 'Pandas', 'Scikit-learn', 'NumPy', 'REST API', 'Supabase', 'LLM APIs', 'RAG', 'Redis', 'FFmpeg'],
     databases: ['MySQL', 'PostgreSQL', 'MongoDB', 'Qdrant (Vector DB)', 'SQLite'],
     softSkills: ['Teamwork', 'Problem Solving', 'Communication', 'Research']
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navigation from '@/components/Navigation';
-import { AtSign, Github, Linkedin, Instagram } from 'lucide-react';
+import { AtSign, Github, Linkedin } from 'lucide-react';
 import { toast } from "@/hooks/use-toast";
 import SEOManager from '@/components/SEOManager';
 
@@ -81,9 +81,9 @@ const Contact = () => {
                                 <span>github.com/rohitkshirsagar19</span>
                             </a>
 
-                            <a href="https://www.instagram.com/rohitkshirsagar19" target="_blank" rel="noopener noreferrer" className="flex items-center text-retro-light-gray hover:text-retro-purple transition-colors group">
-                                <Instagram className="w-5 h-5 mr-3 group-hover:text-retro-purple" />
-                                <span>instagram.com/rohitkshirsagar19</span>
+                            <a href="https://x.com/_rohitk19" target="_blank" rel="noopener noreferrer" className="flex items-center text-retro-light-gray hover:text-retro-purple transition-colors group">
+                                <span className="mr-3 font-pixel text-sm leading-none group-hover:text-retro-purple">X</span>
+                                <span>x.com/_rohitk19</span>
                             </a>
                         </div>
                     </div>

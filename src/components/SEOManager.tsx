@@ -11,8 +11,8 @@ interface SEOProps {
 
 const SEOManager: React.FC<SEOProps> = ({
     title = "Rohit Kshirsagar | Software Engineer",
-    description = "Portfolio of Rohit Kshirsagar - Incoming SDE, GenAI Engineer, and Systems Enthusiast.",
-    keywords = "Rohit Kshirsagar, Software Engineer, Portfolio, GenAI, Golang, React, Systems Engineering",
+    description = "Portfolio of Rohit Kshirsagar - Software Engineer Intern @ Tessact | GenAI & Backend Systems.",
+    keywords = "Rohit Kshirsagar, Software Engineer Intern, Tessact, GenAI, Backend Systems, Golang, React, Systems Engineering",
     image = "/og-image.png",
     url = "https://rohitkshirsagar19.github.io"
 }) => {

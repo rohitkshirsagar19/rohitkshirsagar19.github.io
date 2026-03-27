@@ -27,7 +27,7 @@ export const experiences: Experience[] = [
         company: "Tessact",
         period: "Feb 2026 – Present",
         description: [
-            "Building Video AI Infrastructure"
+            "Engineering scalable video infrastructure using FastAPI, and architecting distributed task queues with Celery and Redis to handle high-throughput media processing."
         ],
         color: "text-retro-blue"
     },
@@ -97,5 +97,10 @@ export const certificates: Certificate[] = [
         name: "Oracle Cloud Infrastructure 2025 Foundations Associate (1Z0-1085-25)",
         issuer: "Oracle",
         year: 2025
+    },
+    {
+        name: "Microsoft Certified: Azure AI Fundamentals",
+        issuer: "Microsoft",
+        year: 2026
     }
 ];
